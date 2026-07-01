@@ -1,27 +1,5 @@
 /**
- * 03-lcd-image — 图片背景 + 信息叠加
- *
- * 功能:
- *   从 SPIFFS 加载 240x320 RGB565 图片作为背景
- *   叠加显示：星期、日期、时间、温度、B站粉丝数
- *   自动刷新时间，WiFi 断线重连
- *
- * 硬件: ESP32-WROOM (featheresp32)
- * 屏幕: 2.4" TFT ST7789, SPI 240x320
- *
- * 接线:
- *   引脚# | 屏幕引脚 | → ESP32
- *   ------|----------|--------
- *   1 GND   | GND      | GND
- *   2 RST   | RESET    | D15
- *   3 SCL   | SPI CLK  | D2
- *   4 D/C   | DATA/CMD | D4
- *   5 CS    | SPI CS   | D5
- *   6 SDA   | MOSI     | D18
- *   7 SDO   | MISO     | D19 (不接)
- *   8 VCC   | 3.3V     | 3.3V
- *   9 LEDA  | 背光 +   | D21
- *   10 LEDK | 背光 -   | D22
+ * 03-lcd-image — 纯位图文字（不依赖 drawString）
  */
 
 #include <Arduino.h>
@@ -31,159 +9,257 @@
 #include <time.h>
 #include <HTTPClient.h>
 #include <ArduinoJson.h>
+#include "zimo.h"
 
-// ============ 配置区 ============
-const char *WIFI_SSID = "Xiaomi_wu";
-const char *WIFI_PASS = "wu663366";
+const char *WIFI_SSID = "Xiaomi_wu", *WIFI_PASS = "wu663366";
 const char *BILIBILI_UID = "3461566076816331";
-const int  REFRESH_INTERVAL = 30;  // 秒
-const char *NTP_SERVER1 = "ntp.aliyun.com";
-const char *NTP_SERVER2 = "cn.pool.ntp.org";
-const char *NTP_SERVER3 = "time1.cloud.tencent.com";
-constexpr long GMT_OFFSET_SEC = 8 * 3600;
-constexpr int  DST_OFFSET_SEC = 0;
-
-// ============ 引脚 ============
+const char *WEATHER_KEY = "SvwF5YIvG_n_H_KfT";
+const char *WEATHER_CITY = "hangzhou";
+const int REFRESH_INTERVAL = 60;
+const char *NTP_SRV1 = "ntp.aliyun.com";
+constexpr long TZ_OFFSET = 8 * 3600;
 const int BACKLIGHT_NEG = 22;
 TFT_eSPI tft;
 
-// ============ 函数声明 ============
-bool loadBackground();
-void drawBackground();
-void drawOverlay();
-String getBeijingTime();
-int getBilibiliFollower();
-bool WiFi_Connect();
-bool NTP_Setup();
+#define BG_A tft.color565(248, 244, 216)
+#define BG_B tft.color565(248, 236, 208)
+const char *WEEKDAYS[] = {"Sun","Mon","Tue","Wed","Thu","Fri","Sat"};
 
-// ============ setup ============
-void setup() {
-  Serial.begin(115200);
-  delay(200);
+// ====== 数字放大3倍的表 ======
+const uint8_t dg[10][16] PROGMEM = {
+  {0x00,0x00,0x00,0x38,0x44,0x44,0x44,0x44,0x44,0x44,0x44,0x38,0x00,0x00,0x00,0x00},
+  {0x00,0x00,0x00,0x10,0x30,0x50,0x10,0x10,0x10,0x10,0x10,0x7C,0x00,0x00,0x00,0x00},
+  {0x00,0x00,0x00,0x38,0x44,0x04,0x08,0x10,0x20,0x40,0x44,0x7C,0x00,0x00,0x00,0x00},
+  {0x00,0x00,0x00,0x38,0x44,0x04,0x18,0x04,0x44,0x44,0x44,0x38,0x00,0x00,0x00,0x00},
+  {0x00,0x00,0x00,0x08,0x18,0x28,0x48,0x48,0x7C,0x08,0x08,0x08,0x00,0x00,0x00,0x00},
+  {0x00,0x00,0x00,0x7C,0x40,0x40,0x78,0x04,0x04,0x04,0x44,0x38,0x00,0x00,0x00,0x00},
+  {0x00,0x00,0x00,0x38,0x44,0x40,0x78,0x44,0x44,0x44,0x44,0x38,0x00,0x00,0x00,0x00},
+  {0x00,0x00,0x00,0x7C,0x44,0x04,0x08,0x10,0x20,0x20,0x20,0x20,0x00,0x00,0x00,0x00},
+  {0x00,0x00,0x00,0x38,0x44,0x44,0x38,0x44,0x44,0x44,0x44,0x38,0x00,0x00,0x00,0x00},
+  {0x00,0x00,0x00,0x38,0x44,0x44,0x44,0x3C,0x04,0x44,0x44,0x38,0x00,0x00,0x00,0x00},
+};
 
-  pinMode(BACKLIGHT_NEG, OUTPUT);
-  digitalWrite(BACKLIGHT_NEG, LOW);
-
-  tft.init();
-  tft.setRotation(0);
-  tft.writecommand(0x3A);
-  tft.writedata(0x55);
-  tft.invertDisplay(false);
-
-  // 挂载 SPIFFS
-  if (!SPIFFS.begin(true)) {
-    Serial.println("[ERR] SPIFFS mount failed");
-    tft.fillScreen(TFT_RED);
-    tft.setTextColor(TFT_WHITE, TFT_RED);
-    tft.drawCentreString("SPIFFS Error", 120, 160, 2);
-    return;
-  }
-  Serial.println("[OK] SPIFFS mounted");
-
-  // 加载背景图片
-  if (!loadBackground()) {
-    tft.fillScreen(TFT_BLACK);
-    tft.setTextColor(TFT_WHITE, TFT_BLACK);
-    tft.drawCentreString("No background image", 120, 160, 2);
-    tft.drawCentreString("upload data/ to SPIFFS", 120, 190, 2);
-  }
-
-  // WiFi + NTP（后台静默连接）
-  WiFi_Connect();
-  if (WiFi.status() == WL_CONNECTED) NTP_Setup();
-}
-
-// ============ loop ============
-void loop() {
-  static unsigned long lastRefresh = 0;
-  unsigned long now = millis();
-
-  if (now - lastRefresh >= REFRESH_INTERVAL * 1000UL) {
-    lastRefresh = now;
-
-    // WiFi 保活
-    if (WiFi.status() != WL_CONNECTED) WiFi_Connect();
-
-    // 重绘背景 + 叠加信息
-    drawBackground();
-    drawOverlay();
+// 画数字(放大3倍,24x48)
+void drawNum3(int x, int y, uint8_t d, uint16_t color) {
+  if (d>9) return;
+  for (int row=0; row<16; row++) {
+    byte v = pgm_read_byte(&dg[d][row]);
+    for (int col=0; col<8; col++)
+      if (v & (0x80>>col)) tft.fillRect(x+col*3, y+row*3, 3, 3, color);
   }
 }
 
-// ============ 背景图片加载 ============
+// ====== 8x16 ASCII 位图 ======
+const uint8_t ch8x16[][16] PROGMEM = {
+  {0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00}, // 0:空格
+  {0x00,0x00,0x00,0x38,0x44,0x44,0x44,0x44,0x44,0x44,0x44,0x38,0x00,0x00,0x00,0x00}, // 1:0
+  {0x00,0x00,0x00,0x10,0x30,0x50,0x10,0x10,0x10,0x10,0x10,0x7C,0x00,0x00,0x00,0x00}, // 2:1
+  {0x00,0x00,0x00,0x38,0x44,0x04,0x08,0x10,0x20,0x40,0x44,0x7C,0x00,0x00,0x00,0x00}, // 3:2
+  {0x00,0x00,0x00,0x38,0x44,0x04,0x18,0x04,0x44,0x44,0x44,0x38,0x00,0x00,0x00,0x00}, // 4:3
+  {0x00,0x00,0x00,0x08,0x18,0x28,0x48,0x48,0x7C,0x08,0x08,0x08,0x00,0x00,0x00,0x00}, // 5:4
+  {0x00,0x00,0x00,0x7C,0x40,0x40,0x78,0x04,0x04,0x04,0x44,0x38,0x00,0x00,0x00,0x00}, // 6:5
+  {0x00,0x00,0x00,0x38,0x44,0x40,0x78,0x44,0x44,0x44,0x44,0x38,0x00,0x00,0x00,0x00}, // 7:6
+  {0x00,0x00,0x00,0x7C,0x44,0x04,0x08,0x10,0x20,0x20,0x20,0x20,0x00,0x00,0x00,0x00}, // 8:7
+  {0x00,0x00,0x00,0x38,0x44,0x44,0x38,0x44,0x44,0x44,0x44,0x38,0x00,0x00,0x00,0x00}, // 9:8
+  {0x00,0x00,0x00,0x38,0x44,0x44,0x44,0x3C,0x04,0x44,0x44,0x38,0x00,0x00,0x00,0x00}, // 10:9
+  {0x00,0x00,0x00,0x00,0x00,0x00,0x18,0x18,0x00,0x00,0x18,0x18,0x00,0x00,0x00,0x00}, // 11::
+  {0x00,0x00,0x00,0x7C,0x40,0x40,0x78,0x40,0x40,0x40,0x40,0x40,0x00,0x00,0x00,0x00}, // 12:F
+  {0x00,0x00,0x00,0x3C,0x44,0x40,0x38,0x04,0x04,0x44,0x44,0x38,0x00,0x00,0x00,0x00}, // 13:S
+  {0x00,0x00,0x00,0x00,0x00,0x00,0x44,0x44,0x44,0x44,0x44,0x7C,0x00,0x00,0x00,0x00}, // 14:u
+  {0x00,0x00,0x00,0x00,0x00,0x00,0x44,0x64,0x54,0x4C,0x44,0x44,0x00,0x00,0x00,0x00}, // 15:n
+  {0x00,0x00,0x00,0x44,0x6C,0x54,0x54,0x44,0x44,0x44,0x44,0x44,0x00,0x00,0x00,0x00}, // 16:M
+  {0x00,0x00,0x00,0x00,0x00,0x00,0x38,0x44,0x44,0x44,0x44,0x38,0x00,0x00,0x00,0x00}, // 17:o
+  {0x00,0x00,0x00,0xFE,0x10,0x10,0x10,0x10,0x10,0x10,0x10,0x10,0x00,0x00,0x00,0x00}, // 18:T
+  {0x00,0x00,0x00,0x00,0x00,0x00,0x38,0x44,0x7C,0x40,0x40,0x3C,0x00,0x00,0x00,0x00}, // 19:e
+  {0x00,0x00,0x00,0x00,0x04,0x04,0x34,0x4C,0x44,0x44,0x44,0x3C,0x00,0x00,0x00,0x00}, // 20:d
+  {0x00,0x00,0x00,0x44,0x44,0x44,0x44,0x44,0x54,0x54,0x6C,0x44,0x00,0x00,0x00,0x00}, // 21:W
+  {0x00,0x00,0x00,0x00,0x00,0x00,0x44,0x64,0x58,0x40,0x40,0x40,0x00,0x00,0x00,0x00}, // 22:r
+  {0x00,0x00,0x00,0x00,0x00,0x00,0x3C,0x44,0x38,0x04,0x44,0x38,0x00,0x00,0x00,0x00}, // 23:s
+  {0x00,0x00,0x00,0x00,0x00,0x00,0x10,0x00,0x10,0x10,0x10,0x10,0x00,0x00,0x00,0x00}, // 24:i
+  {0x00,0x00,0x00,0x00,0x00,0x00,0x3C,0x04,0x3C,0x44,0x44,0x3C,0x00,0x00,0x00,0x00}, // 25:a
+  {0x00,0x00,0x00,0x00,0x00,0x00,0x20,0x20,0x7C,0x20,0x20,0x24,0x18,0x00,0x00,0x00}, // 26:t
+  {0x00,0x00,0x00,0x00,0x00,0x00,0x44,0x64,0x54,0x4C,0x44,0x44,0x00,0x00,0x00,0x00}, // 27:h
+};
 
-bool loadBackground() {
-  // 后续实现：从 SPIFFS 读取 background.raw
-  // 格式：240*320*2 = 153600 字节 RGB565
-  return false;
+int chIdx(char c) {
+  if (c==' ') return 0; if (c>='0'&&c<='9') return c-'0'+1;
+  if (c==':') return 11; if (c=='F') return 12; if (c=='S') return 13;
+  if (c=='u') return 14; if (c=='n') return 15; if (c=='M') return 16;
+  if (c=='o') return 17; if (c=='T') return 18; if (c=='e') return 19;
+  if (c=='d') return 20; if (c=='W') return 21; if (c=='r') return 22;
+  if (c=='s') return 23; if (c=='i') return 24; if (c=='a') return 25;
+  if (c=='t') return 26; if (c=='h') return 27; return 0;
 }
 
-void drawBackground() {
-  // 后续实现：将 background.raw 直接刷到屏幕
+void drawChar8(int x, int y, char c, uint16_t color) {
+  int idx = chIdx(c);
+  for (int row=0; row<16; row++) {
+    byte v = pgm_read_byte(&ch8x16[idx][row]);
+    for (int col=0; col<8; col++)
+      if (v & (0x80>>col)) tft.drawPixel(x+col, y+row, color);
+  }
 }
 
-// ============ 信息叠加 ============
-
-void drawOverlay() {
-  // 在背景上叠加文字
+void drawText(int x, int y, const char *s, uint16_t color) {
+  int cx = x;
+  while (*s) { drawChar8(cx, y, *s, color); cx += 10; s++; }
 }
 
-// ============ WiFi ============
-
-bool WiFi_Connect() {
-  Serial.print("[WIFI] Connecting...");
-  WiFi.mode(WIFI_STA);
-  WiFi.begin(WIFI_SSID, WIFI_PASS);
-  int attempts = 0;
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(500);
-    Serial.print(".");
-    if (++attempts > 40) {
-      Serial.println(" TIMEOUT");
-      return false;
+void drawText2x(int x, int y, const char *s, uint16_t color) {
+  int cx = x;
+  while (*s) {
+    int idx = chIdx(*s);
+    for (int row=0; row<16; row++) {
+      byte v = pgm_read_byte(&ch8x16[idx][row]);
+      for (int col=0; col<8; col++)
+        if (v & (0x80>>col)) tft.fillRect(cx+col*2, y+row*2, 2, 2, color);
     }
+    cx += 20; s++;
   }
-  Serial.println(" OK");
-  Serial.printf("  IP: %s\n", WiFi.localIP().toString().c_str());
+}
+
+// ====== zimo 中文 ======
+#include "zimo.h"
+static void drawCN(int x, int y, uint16_t c, int idx) {
+  if (idx<0||idx>=47) return;
+  const uint8_t *b = text[idx];
+  for (int col=0;col<20;++col) {
+    uint8_t b0=b[col*3],b1=b[col*3+1],b2=b[col*3+2];
+    for (int r=0;r<8;++r) { if (b0&(1<<r)) tft.drawPixel(x+col,y+r,c); }
+    for (int r=0;r<8;++r) { if (b1&(1<<r)) tft.drawPixel(x+col,y+8+r,c); }
+    for (int r=0;r<4;++r) { if (b2&(1<<r)) tft.drawPixel(x+col,y+16+r,c); }
+  }
+}
+
+void drawWx(int cx, int y, const String &wx, uint16_t c) {
+  int i1=-1,i2=-1;
+  if(wx=="晴") i1=0; else if(wx=="多云"){i1=1;i2=2;}
+  else if(wx=="雨"||wx=="阵雨") i1=8; else if(wx=="雷"||wx=="雷阵雨") i1=9;
+  else if(wx=="阴") i1=6; else if(wx=="雪") i1=20;
+  else if(wx=="雾") i1=26; else if(wx=="霾") i1=27;
+  else if(wx=="风") i1=33; else i1=0;
+  drawCN(cx-10,y,c,i1);
+  if(i2>=0) drawCN(cx+12,y,c,i2);
+}
+
+// ====== 背景 ======
+bool pushBG() {
+  File f=SPIFFS.open("/background.raw","r");
+  if(!f) return false;
+  tft.startWrite(); tft.setAddrWindow(0,0,240,320);
+  uint16_t row[240];
+  for(int y=0;y<320;y++){ f.read((uint8_t*)row,480); tft.pushColors(row,240); }
+  tft.endWrite(); f.close(); tft.setRotation(0);
   return true;
 }
 
-// ============ NTP ============
+// ====== 画完整时钟 ======
+void drawClock(int h,int m,int s,int wd,const String& wx,int fans) {
+  tft.fillRect(35,45,170,135,BG_A);
+  tft.fillRect(50,280,140,24,BG_B);
 
-bool NTP_Setup() {
-  Serial.print("[NTP] Syncing");
-  configTime(GMT_OFFSET_SEC, DST_OFFSET_SEC, NTP_SERVER1, NTP_SERVER2, NTP_SERVER3);
-  for (int i = 0; i < 50; ++i) {
-    if (time(nullptr) > 1700000000) { Serial.println(" OK"); return true; }
-    delay(200);
-    Serial.print(".");
-  }
+  char buf[16];
+  drawNum3(62,55,h/10,TFT_BLACK);
+  drawNum3(88,55,h%10,TFT_BLACK);
+  tft.fillRect(120,71,4,4,TFT_BLACK); tft.fillRect(120,83,4,4,TFT_BLACK);
+  drawNum3(127,55,m/10,TFT_BLACK);
+  drawNum3(153,55,m%10,TFT_BLACK);
+
+  drawText2x(70,113,WEEKDAYS[wd],TFT_BLACK);
+  drawWx(158,115,wx,TFT_DARKGREY);
+
+  if(fans>=0) sprintf(buf,"Fans:%d",fans); else sprintf(buf,"Fans:--");
+  drawText(85,291,buf,TFT_BLACK);
+}
+
+// ====== 刷新变化 ======
+void refreshChanges(int h,int m,int s,int wd,const String& wx,int fans) {
+  char buf[16];
+  tft.fillRect(62,55,116,48,BG_A);
+  drawNum3(62,55,h/10,TFT_BLACK);
+  drawNum3(88,55,h%10,TFT_BLACK);
+  tft.fillRect(120,71,4,4,TFT_BLACK); tft.fillRect(120,83,4,4,TFT_BLACK);
+  drawNum3(127,55,m/10,TFT_BLACK);
+  drawNum3(153,55,m%10,TFT_BLACK);
+
+  tft.fillRect(50,112,70,20,BG_A);
+  drawText2x(70,113,WEEKDAYS[wd],TFT_BLACK);
+
+  tft.fillRect(120,112,80,25,BG_A);
+  drawWx(158,115,wx,TFT_DARKGREY);
+
+  tft.fillRect(50,280,140,24,BG_B);
+  if(fans>=0) sprintf(buf,"Fans:%d",fans); else sprintf(buf,"Fans:--");
+  drawText(85,291,buf,TFT_BLACK);
+}
+
+// ====== API ======
+String getWeather() {
+  HTTPClient h;
+  String u=String("https://api.seniverse.com/v3/weather/now.json")+"?key="+WEATHER_KEY+"&location="+WEATHER_CITY+"&language=zh-Hans&unit=c";
+  h.begin(u);h.setTimeout(5000);h.setUserAgent("ESP32");
+  int c=h.GET(); if(c!=200){h.end();return"晴";}
+  String r=h.getString();h.end();
+  JsonDocument d; if(deserializeJson(d,r)) return"晴";
+  const char*t=d["results"][0]["now"]["text"]; if(!t) return"晴";
+  if(strstr(t,"多云"))return"多云";if(strstr(t,"雨"))return"雨";if(strstr(t,"雷"))return"雷";
+  if(strstr(t,"雪"))return"雪";if(strstr(t,"阴"))return"阴";if(strstr(t,"雾"))return"雾";
+  if(strstr(t,"风"))return"风";if(strstr(t,"霾"))return"霾";if(strstr(t,"晴"))return"晴";
+  return"晴";
+}
+int getBili(){
+  if(WiFi.status()!=WL_CONNECTED)return -1;
+  HTTPClient h; String u=String("https://api.bilibili.com/x/relation/stat?vmid=")+BILIBILI_UID;
+  h.begin(u);h.setTimeout(5000);h.setUserAgent("Mozilla/5.0");
+  int c=h.GET(); if(c!=200){h.end();return -1;}
+  String r=h.getString();h.end(); JsonDocument d;
+  if(deserializeJson(d,r))return -2; if(d["code"].as<int>()!=0)return -3;
+  return d["data"]["follower"].as<int>();
+}
+bool WiFi_Connect(){
+  if(WiFi.status()==WL_CONNECTED)return true;
+  Serial.print("[WIFI]");WiFi.mode(WIFI_STA);WiFi.begin(WIFI_SSID,WIFI_PASS);
+  for(int i=0;i<60;i++){ if(WiFi.status()==WL_CONNECTED){Serial.println(" OK");return true;} delay(500);Serial.print("."); }
+  Serial.println(" TIMEOUT");return false;
+}
+void NTP_Sync(){
+  Serial.print("[NTP]");configTime(TZ_OFFSET,0,NTP_SRV1);
+  for(int i=0;i<50;i++){ if(time(nullptr)>1700000000){Serial.println(" OK");return;} delay(200);Serial.print("."); }
   Serial.println(" TIMEOUT");
-  return false;
 }
 
-String getBeijingTime() {
-  struct tm t;
-  if (!getLocalTime(&t)) return "";
-  char buf[64];
-  strftime(buf, sizeof(buf), "%Y-%m-%d %H:%M:%S %a", &t);
-  return String(buf);
+void setup() {
+  Serial.begin(115200); delay(200);
+  pinMode(BACKLIGHT_NEG,OUTPUT); digitalWrite(BACKLIGHT_NEG,LOW);
+  tft.init(); tft.setRotation(0);
+  tft.writecommand(0x3A); tft.writedata(0x55);
+  tft.invertDisplay(false);
+
+  tft.fillScreen(TFT_WHITE);
+  drawText2x(65,145,"Initializing...",TFT_DARKGREY);
+
+  if(!SPIFFS.begin(true)){ tft.fillScreen(TFT_RED); return; }
+  WiFi_Connect();
+  if(WiFi.status()==WL_CONNECTED) NTP_Sync();
+
+  struct tm t; int h=0,m=0,s=0,wd=3;
+  if(getLocalTime(&t)){ h=t.tm_hour;m=t.tm_min;s=t.tm_sec;wd=t.tm_wday; }
+  String wx=getWeather();
+  int fans=getBili();
+
+  if(!pushBG()){ tft.fillScreen(TFT_RED); return; }
+  drawClock(h,m,s,wd,wx,fans);
 }
 
-// ============ B站 API ============
-
-int getBilibiliFollower() {
-  HTTPClient http;
-  String url = String("https://api.bilibili.com/x/relation/stat?vmid=") + BILIBILI_UID;
-  http.begin(url);
-  http.setTimeout(5000);
-  http.setUserAgent("Mozilla/5.0");
-  int code = http.GET();
-  if (code != 200) { http.end(); return -1; }
-  String response = http.getString();
-  http.end();
-  JsonDocument doc;
-  if (deserializeJson(doc, response)) return -2;
-  if (doc["code"].as<int>() != 0) return -3;
-  return doc["data"]["follower"].as<int>();
+void loop() {
+  static unsigned long last=0;
+  if(millis()-last>=REFRESH_INTERVAL*1000UL){
+    last=millis();
+    if(WiFi.status()!=WL_CONNECTED) WiFi_Connect();
+    struct tm t; int h=0,m=0,s=0,wd=3;
+    if(getLocalTime(&t)){ h=t.tm_hour;m=t.tm_min;s=t.tm_sec;wd=t.tm_wday; }
+    String wx=getWeather();
+    int fans=getBili();
+    refreshChanges(h,m,s,wd,wx,fans);
+  }
 }
