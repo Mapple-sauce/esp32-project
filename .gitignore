@@ -9,7 +9,6 @@ __pycache__/
 *.hex
 build/
 ai-stock-advisor/
-esp32-ornament/
 Noto*.otf
 byd_*.py
 byd_*.png

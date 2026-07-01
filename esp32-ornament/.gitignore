@@ -1,0 +1,13 @@
+.pio*
+.pioenvs
+.piolib
+.piotest
+.vscode/
+*.o
+*.d
+*.elf
+*.map
+*.hex
+build/
+__pycache__/
+data/fonts/
