@@ -9,6 +9,7 @@
 | [00-blink](00-blink/) | LED 闪烁 | GPIO2 板载 LED 闪烁 | ✅ 完成 |
 | [01-wifi](01-wifi/) | WiFi + NTP + B站API | 连接WiFi→获取北京时间→获取B站粉丝数 | ✅ 完成 |
 | [02-lcd](02-lcd/) | ST7789 TFT 显示 | 白底中英文、图形、颜色条轮播 | ✅ 完成 |
+| [03-lcd-image](03-lcd-image/) | 图片背景时钟 | SPIFFS 加载背景图 + 时间/信息叠加 | 🚧 进行中 |
 
 ## 开发环境
 
