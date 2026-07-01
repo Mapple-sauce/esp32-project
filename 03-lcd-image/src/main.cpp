@@ -166,7 +166,7 @@ void drawClock(int h,int m,int s,int wd,const String& wx,int fans) {
   drawNum3(153,55,m%10,TFT_BLACK);
 
   drawText2x(70,113,WEEKDAYS[wd],TFT_BLACK);
-  drawWx(158,115,wx,TFT_DARKGREY);
+  drawWx(158,115,wx,TFT_BLACK);
 
   if(fans>=0) sprintf(buf,"Fans:%d",fans); else sprintf(buf,"Fans:--");
   drawText(85,291,buf,TFT_BLACK);
@@ -186,7 +186,7 @@ void refreshChanges(int h,int m,int s,int wd,const String& wx,int fans) {
   drawText2x(70,113,WEEKDAYS[wd],TFT_BLACK);
 
   tft.fillRect(120,112,80,25,BG_A);
-  drawWx(158,115,wx,TFT_DARKGREY);
+  drawWx(158,115,wx,TFT_BLACK);
 
   tft.fillRect(50,280,140,24,BG_B);
   if(fans>=0) sprintf(buf,"Fans:%d",fans); else sprintf(buf,"Fans:--");
