@@ -1,0 +1,3847 @@
+{
+  "head": {
+    "docType": "3",
+    "editorVersion": "6.5.40",
+    "cId": "",
+    "xGui": {
+      "showGrid": true,
+      "snapToGrid": true,
+      "showPageBorder": false
+    },
+    "plugin": ""
+  },
+  "canvas": {
+    "BICKERCOLOR": 16777215,
+    "GRIDCOLOR": 14737632,
+    "HIDE": 0,
+    "SNAP": 1,
+    "zoom": 8,
+    "width": 2800,
+    "height": 2200
+  },
+  "elements": [
+    {
+      "type": "component",
+      "head": {
+        "uuid": "bee2ee3784a34b5c",
+        "c_para": {
+          "name": "J1",
+          "value": "USB Type-C"
+        },
+        "c_name": "USB Type-C",
+        "package": "USB-C-2.0",
+        "libId": "",
+        "manufacturer": "",
+        "datasheet": ""
+      },
+      "shape": {
+        "x": 200,
+        "y": 200,
+        "w": 160,
+        "h": 80,
+        "pins": [
+          {
+            "x": 80,
+            "y": -16.0,
+            "length": 10,
+            "direction": "left",
+            "type": "end",
+            "color": 0,
+            "name": "VBUS"
+          },
+          {
+            "x": 80,
+            "y": 16.0,
+            "length": 10,
+            "direction": "left",
+            "type": "end",
+            "color": 0,
+            "name": "VBUS"
+          },
+          {
+            "x": -80,
+            "y": -16.0,
+            "length": 10,
+            "direction": "right",
+            "type": "end",
+            "color": 0,
+            "name": "GND"
+          },
+          {
+            "x": -80,
+            "y": 16.0,
+            "length": 10,
+            "direction": "right",
+            "type": "end",
+            "color": 0,
+            "name": "GND"
+          }
+        ],
+        "rectangles": [
+          {
+            "x": -80,
+            "y": -40,
+            "w": 160,
+            "h": 80,
+            "stroke_width": 2,
+            "color": 255,
+            "fill": 16775393,
+            "r": 5
+          }
+        ],
+        "circles": [],
+        "lines": [],
+        "texts": [
+          {
+            "type": "text",
+            "x": 0,
+            "y": -70,
+            "w": 0,
+            "h": 0,
+            "stroke_width": 0,
+            "color": 255,
+            "text": "J1",
+            "font_size": 12,
+            "text_anchor": "middle",
+            "text_orient": 0
+          },
+          {
+            "type": "text",
+            "x": 0,
+            "y": 70,
+            "w": 0,
+            "h": 0,
+            "stroke_width": 0,
+            "color": 255,
+            "text": "USB Type-C",
+            "font_size": 10,
+            "text_anchor": "middle",
+            "text_orient": 0
+          }
+        ]
+      },
+      "position": "200,200",
+      "rotation": 0,
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "component",
+      "head": {
+        "uuid": "093d830380594562",
+        "c_para": {
+          "name": "C1",
+          "value": "100μF 16V"
+        },
+        "c_name": "100μF 16V",
+        "package": "CAP-TH",
+        "libId": "Capacitor",
+        "manufacturer": "",
+        "datasheet": ""
+      },
+      "shape": {
+        "x": 550,
+        "y": 200,
+        "w": 80,
+        "h": 40,
+        "pins": [
+          {
+            "x": 0.0,
+            "y": -20,
+            "length": 10,
+            "direction": "down",
+            "type": "end",
+            "color": 0,
+            "name": "+"
+          },
+          {
+            "x": 0.0,
+            "y": 20,
+            "length": 10,
+            "direction": "up",
+            "type": "end",
+            "color": 0,
+            "name": "-"
+          }
+        ],
+        "rectangles": [
+          {
+            "x": -40,
+            "y": -20,
+            "w": 80,
+            "h": 40,
+            "stroke_width": 2,
+            "color": 65280,
+            "fill": 16775393,
+            "r": 5
+          }
+        ],
+        "circles": [],
+        "lines": [],
+        "texts": [
+          {
+            "type": "text",
+            "x": 0,
+            "y": -50,
+            "w": 0,
+            "h": 0,
+            "stroke_width": 0,
+            "color": 65280,
+            "text": "C1",
+            "font_size": 12,
+            "text_anchor": "middle",
+            "text_orient": 0
+          },
+          {
+            "type": "text",
+            "x": 0,
+            "y": 50,
+            "w": 0,
+            "h": 0,
+            "stroke_width": 0,
+            "color": 65280,
+            "text": "100μF 16V",
+            "font_size": 10,
+            "text_anchor": "middle",
+            "text_orient": 0
+          }
+        ]
+      },
+      "position": "550,200",
+      "rotation": 0,
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "component",
+      "head": {
+        "uuid": "9dfd165762294e63",
+        "c_para": {
+          "name": "C2",
+          "value": "0.1μF"
+        },
+        "c_name": "0.1μF",
+        "package": "0805",
+        "libId": "Capacitor",
+        "manufacturer": "",
+        "datasheet": ""
+      },
+      "shape": {
+        "x": 550,
+        "y": 320,
+        "w": 60,
+        "h": 30,
+        "pins": [
+          {
+            "x": 0.0,
+            "y": -15,
+            "length": 10,
+            "direction": "down",
+            "type": "end",
+            "color": 0,
+            "name": "+"
+          },
+          {
+            "x": 0.0,
+            "y": 15,
+            "length": 10,
+            "direction": "up",
+            "type": "end",
+            "color": 0,
+            "name": "-"
+          }
+        ],
+        "rectangles": [
+          {
+            "x": -30,
+            "y": -15,
+            "w": 60,
+            "h": 30,
+            "stroke_width": 2,
+            "color": 65280,
+            "fill": 16775393,
+            "r": 5
+          }
+        ],
+        "circles": [],
+        "lines": [],
+        "texts": [
+          {
+            "type": "text",
+            "x": 0,
+            "y": -45,
+            "w": 0,
+            "h": 0,
+            "stroke_width": 0,
+            "color": 65280,
+            "text": "C2",
+            "font_size": 12,
+            "text_anchor": "middle",
+            "text_orient": 0
+          },
+          {
+            "type": "text",
+            "x": 0,
+            "y": 45,
+            "w": 0,
+            "h": 0,
+            "stroke_width": 0,
+            "color": 65280,
+            "text": "0.1μF",
+            "font_size": 10,
+            "text_anchor": "middle",
+            "text_orient": 0
+          }
+        ]
+      },
+      "position": "550,320",
+      "rotation": 0,
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "component",
+      "head": {
+        "uuid": "37a55b99c4944eb2",
+        "c_para": {
+          "name": "U2",
+          "value": "AMS1117-3.3\\nLDO 5V→3.3V"
+        },
+        "c_name": "AMS1117-3.3",
+        "package": "SOT-223",
+        "libId": "AMS1117-3.3",
+        "manufacturer": "",
+        "datasheet": ""
+      },
+      "shape": {
+        "x": 600,
+        "y": 260,
+        "w": 140,
+        "h": 100,
+        "pins": [
+          {
+            "x": -70,
+            "y": -20.0,
+            "length": 10,
+            "direction": "right",
+            "type": "end",
+            "color": 0,
+            "name": "Vin"
+          },
+          {
+            "x": -70,
+            "y": 20.0,
+            "length": 10,
+            "direction": "right",
+            "type": "end",
+            "color": 0,
+            "name": "GND"
+          },
+          {
+            "x": 70,
+            "y": 0.0,
+            "length": 10,
+            "direction": "left",
+            "type": "end",
+            "color": 0,
+            "name": "Vout"
+          }
+        ],
+        "rectangles": [
+          {
+            "x": -70,
+            "y": -50,
+            "w": 140,
+            "h": 100,
+            "stroke_width": 2,
+            "color": 16746496,
+            "fill": 16775393,
+            "r": 5
+          }
+        ],
+        "circles": [],
+        "lines": [],
+        "texts": [
+          {
+            "type": "text",
+            "x": 0,
+            "y": -80,
+            "w": 0,
+            "h": 0,
+            "stroke_width": 0,
+            "color": 16746496,
+            "text": "U2",
+            "font_size": 12,
+            "text_anchor": "middle",
+            "text_orient": 0
+          },
+          {
+            "type": "text",
+            "x": 0,
+            "y": 80,
+            "w": 0,
+            "h": 0,
+            "stroke_width": 0,
+            "color": 16746496,
+            "text": "AMS1117-3.3\\nLDO 5V→3.3V",
+            "font_size": 10,
+            "text_anchor": "middle",
+            "text_orient": 0
+          }
+        ]
+      },
+      "position": "600,260",
+      "rotation": 0,
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "component",
+      "head": {
+        "uuid": "41b64c6ab8814402",
+        "c_para": {
+          "name": "C3",
+          "value": "100μF 16V"
+        },
+        "c_name": "100μF 16V",
+        "package": "CAP-TH",
+        "libId": "Capacitor",
+        "manufacturer": "",
+        "datasheet": ""
+      },
+      "shape": {
+        "x": 830,
+        "y": 220,
+        "w": 80,
+        "h": 40,
+        "pins": [
+          {
+            "x": 0.0,
+            "y": -20,
+            "length": 10,
+            "direction": "down",
+            "type": "end",
+            "color": 0,
+            "name": "+"
+          },
+          {
+            "x": 0.0,
+            "y": 20,
+            "length": 10,
+            "direction": "up",
+            "type": "end",
+            "color": 0,
+            "name": "-"
+          }
+        ],
+        "rectangles": [
+          {
+            "x": -40,
+            "y": -20,
+            "w": 80,
+            "h": 40,
+            "stroke_width": 2,
+            "color": 65280,
+            "fill": 16775393,
+            "r": 5
+          }
+        ],
+        "circles": [],
+        "lines": [],
+        "texts": [
+          {
+            "type": "text",
+            "x": 0,
+            "y": -50,
+            "w": 0,
+            "h": 0,
+            "stroke_width": 0,
+            "color": 65280,
+            "text": "C3",
+            "font_size": 12,
+            "text_anchor": "middle",
+            "text_orient": 0
+          },
+          {
+            "type": "text",
+            "x": 0,
+            "y": 50,
+            "w": 0,
+            "h": 0,
+            "stroke_width": 0,
+            "color": 65280,
+            "text": "100μF 16V",
+            "font_size": 10,
+            "text_anchor": "middle",
+            "text_orient": 0
+          }
+        ]
+      },
+      "position": "830,220",
+      "rotation": 0,
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "component",
+      "head": {
+        "uuid": "edd3fe9458cd4c9b",
+        "c_para": {
+          "name": "C4",
+          "value": "0.1μF"
+        },
+        "c_name": "0.1μF",
+        "package": "0805",
+        "libId": "Capacitor",
+        "manufacturer": "",
+        "datasheet": ""
+      },
+      "shape": {
+        "x": 830,
+        "y": 320,
+        "w": 60,
+        "h": 30,
+        "pins": [
+          {
+            "x": 0.0,
+            "y": -15,
+            "length": 10,
+            "direction": "down",
+            "type": "end",
+            "color": 0,
+            "name": "+"
+          },
+          {
+            "x": 0.0,
+            "y": 15,
+            "length": 10,
+            "direction": "up",
+            "type": "end",
+            "color": 0,
+            "name": "-"
+          }
+        ],
+        "rectangles": [
+          {
+            "x": -30,
+            "y": -15,
+            "w": 60,
+            "h": 30,
+            "stroke_width": 2,
+            "color": 65280,
+            "fill": 16775393,
+            "r": 5
+          }
+        ],
+        "circles": [],
+        "lines": [],
+        "texts": [
+          {
+            "type": "text",
+            "x": 0,
+            "y": -45,
+            "w": 0,
+            "h": 0,
+            "stroke_width": 0,
+            "color": 65280,
+            "text": "C4",
+            "font_size": 12,
+            "text_anchor": "middle",
+            "text_orient": 0
+          },
+          {
+            "type": "text",
+            "x": 0,
+            "y": 45,
+            "w": 0,
+            "h": 0,
+            "stroke_width": 0,
+            "color": 65280,
+            "text": "0.1μF",
+            "font_size": 10,
+            "text_anchor": "middle",
+            "text_orient": 0
+          }
+        ]
+      },
+      "position": "830,320",
+      "rotation": 0,
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "component",
+      "head": {
+        "uuid": "77b7a31fc20d4a4b",
+        "c_para": {
+          "name": "5V",
+          "value": ""
+        },
+        "c_name": "5V",
+        "libId": "VCC",
+        "manufacturer": "",
+        "datasheet": ""
+      },
+      "shape": {
+        "x": 300,
+        "y": 100,
+        "w": 0,
+        "h": 0,
+        "pins": [
+          {
+            "x": 0,
+            "y": 0,
+            "length": 0,
+            "direction": "down",
+            "type": "end",
+            "color": 0,
+            "name": "5V"
+          }
+        ],
+        "lines": [
+          {
+            "x1": -8,
+            "y1": 0,
+            "x2": 8,
+            "y2": 0,
+            "stroke_width": 2,
+            "color": 16711680
+          }
+        ],
+        "rectangles": [],
+        "circles": [],
+        "texts": [
+          {
+            "type": "text",
+            "x": 0,
+            "y": 30,
+            "w": 0,
+            "h": 0,
+            "stroke_width": 0,
+            "color": 16711680,
+            "text": "5V",
+            "font_size": 12,
+            "text_anchor": "middle",
+            "text_orient": 0
+          }
+        ]
+      },
+      "position": "300,100",
+      "rotation": 0,
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "component",
+      "head": {
+        "uuid": "a891cfe773624251",
+        "c_para": {
+          "name": "3.3V",
+          "value": ""
+        },
+        "c_name": "3.3V",
+        "libId": "VCC",
+        "manufacturer": "",
+        "datasheet": ""
+      },
+      "shape": {
+        "x": 1100,
+        "y": 300,
+        "w": 0,
+        "h": 0,
+        "pins": [
+          {
+            "x": 0,
+            "y": 0,
+            "length": 0,
+            "direction": "down",
+            "type": "end",
+            "color": 0,
+            "name": "3.3V"
+          }
+        ],
+        "lines": [
+          {
+            "x1": -8,
+            "y1": 0,
+            "x2": 8,
+            "y2": 0,
+            "stroke_width": 2,
+            "color": 16711680
+          }
+        ],
+        "rectangles": [],
+        "circles": [],
+        "texts": [
+          {
+            "type": "text",
+            "x": 0,
+            "y": 30,
+            "w": 0,
+            "h": 0,
+            "stroke_width": 0,
+            "color": 16711680,
+            "text": "3.3V",
+            "font_size": 12,
+            "text_anchor": "middle",
+            "text_orient": 0
+          }
+        ]
+      },
+      "position": "1100,300",
+      "rotation": 0,
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "component",
+      "head": {
+        "uuid": "84e0d18a5e9a4b65",
+        "c_para": {
+          "name": "GND",
+          "value": ""
+        },
+        "c_name": "GND",
+        "libId": "GND",
+        "manufacturer": "",
+        "datasheet": ""
+      },
+      "shape": {
+        "x": 300,
+        "y": 400,
+        "w": 0,
+        "h": 0,
+        "pins": [
+          {
+            "x": 0,
+            "y": 0,
+            "length": 0,
+            "direction": "up",
+            "type": "end",
+            "color": 0,
+            "name": "GND"
+          }
+        ],
+        "lines": [
+          {
+            "x1": -12,
+            "y1": 0,
+            "x2": 12,
+            "y2": 0,
+            "stroke_width": 2,
+            "color": 0
+          },
+          {
+            "x1": -8,
+            "y1": 6,
+            "x2": 8,
+            "y2": 6,
+            "stroke_width": 1.5,
+            "color": 0
+          },
+          {
+            "x1": -4,
+            "y1": 12,
+            "x2": 4,
+            "y2": 12,
+            "stroke_width": 1,
+            "color": 0
+          }
+        ],
+        "rectangles": [],
+        "circles": [],
+        "texts": [
+          {
+            "type": "text",
+            "x": 0,
+            "y": -30,
+            "w": 0,
+            "h": 0,
+            "stroke_width": 0,
+            "color": 0,
+            "text": "GND",
+            "font_size": 12,
+            "text_anchor": "middle",
+            "text_orient": 0
+          }
+        ]
+      },
+      "position": "300,400",
+      "rotation": 0,
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "component",
+      "head": {
+        "uuid": "016c29e89fbd43b6",
+        "c_para": {
+          "name": "GND",
+          "value": ""
+        },
+        "c_name": "GND",
+        "libId": "GND",
+        "manufacturer": "",
+        "datasheet": ""
+      },
+      "shape": {
+        "x": 750,
+        "y": 480,
+        "w": 0,
+        "h": 0,
+        "pins": [
+          {
+            "x": 0,
+            "y": 0,
+            "length": 0,
+            "direction": "up",
+            "type": "end",
+            "color": 0,
+            "name": "GND"
+          }
+        ],
+        "lines": [
+          {
+            "x1": -12,
+            "y1": 0,
+            "x2": 12,
+            "y2": 0,
+            "stroke_width": 2,
+            "color": 0
+          },
+          {
+            "x1": -8,
+            "y1": 6,
+            "x2": 8,
+            "y2": 6,
+            "stroke_width": 1.5,
+            "color": 0
+          },
+          {
+            "x1": -4,
+            "y1": 12,
+            "x2": 4,
+            "y2": 12,
+            "stroke_width": 1,
+            "color": 0
+          }
+        ],
+        "rectangles": [],
+        "circles": [],
+        "texts": [
+          {
+            "type": "text",
+            "x": 0,
+            "y": -30,
+            "w": 0,
+            "h": 0,
+            "stroke_width": 0,
+            "color": 0,
+            "text": "GND",
+            "font_size": 12,
+            "text_anchor": "middle",
+            "text_orient": 0
+          }
+        ]
+      },
+      "position": "750,480",
+      "rotation": 0,
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "wire",
+      "head": {
+        "uuid": "47eedd537e0043b8",
+        "c_para": {
+          "netName": "5V_NET",
+          "wire_width": "0.3",
+          "color": "16711680"
+        }
+      },
+      "shape": {
+        "x": 360,
+        "y": 200,
+        "w": 190,
+        "h": 0
+      },
+      "position": "360,200;550,200",
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "wire",
+      "head": {
+        "uuid": "3441d5ed02a1437b",
+        "c_para": {
+          "netName": "5V_NET",
+          "wire_width": "0.3",
+          "color": "16711680"
+        }
+      },
+      "shape": {
+        "x": 550,
+        "y": 160,
+        "w": 0,
+        "h": 40
+      },
+      "position": "550,160;550,200",
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "wire",
+      "head": {
+        "uuid": "5b0da64a3acd4e2e",
+        "c_para": {
+          "netName": "5V_NET",
+          "wire_width": "0.3",
+          "color": "16711680"
+        }
+      },
+      "shape": {
+        "x": 550,
+        "y": 200,
+        "w": 50,
+        "h": 30
+      },
+      "position": "550,200;600,230",
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "netlabel",
+      "head": {
+        "uuid": "59268f9c21544e63",
+        "c_para": {
+          "netName": "5V"
+        }
+      },
+      "shape": {
+        "x": 630,
+        "y": 205,
+        "w": 12,
+        "h": 12
+      },
+      "position": "630,205",
+      "rotation": 0,
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "wire",
+      "head": {
+        "uuid": "41dc51c0fbd041d4",
+        "c_para": {
+          "netName": "",
+          "wire_width": "0.3",
+          "color": "0"
+        }
+      },
+      "shape": {
+        "x": 550,
+        "y": 240,
+        "w": 0,
+        "h": 80
+      },
+      "position": "550,240;550,320",
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "wire",
+      "head": {
+        "uuid": "fcff93d556494742",
+        "c_para": {
+          "netName": "",
+          "wire_width": "0.3",
+          "color": "0"
+        }
+      },
+      "shape": {
+        "x": 550,
+        "y": 320,
+        "w": -150,
+        "h": 0
+      },
+      "position": "550,320;400,320",
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "wire",
+      "head": {
+        "uuid": "46e146ba549e42ca",
+        "c_para": {
+          "netName": "",
+          "wire_width": "0.3",
+          "color": "0"
+        }
+      },
+      "shape": {
+        "x": 400,
+        "y": 320,
+        "w": 0,
+        "h": 80
+      },
+      "position": "400,320;400,400",
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "wire",
+      "head": {
+        "uuid": "b58188d2f9ba4ddf",
+        "c_para": {
+          "netName": "",
+          "wire_width": "0.3",
+          "color": "0"
+        }
+      },
+      "shape": {
+        "x": 600,
+        "y": 310,
+        "w": 150,
+        "h": 0
+      },
+      "position": "600,310;750,310",
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "wire",
+      "head": {
+        "uuid": "c0253cb970f14a32",
+        "c_para": {
+          "netName": "",
+          "wire_width": "0.3",
+          "color": "0"
+        }
+      },
+      "shape": {
+        "x": 750,
+        "y": 310,
+        "w": 0,
+        "h": 170
+      },
+      "position": "750,310;750,480",
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "wire",
+      "head": {
+        "uuid": "6815d3c427994ed4",
+        "c_para": {
+          "netName": "3V3_NET",
+          "wire_width": "0.3",
+          "color": "16711680"
+        }
+      },
+      "shape": {
+        "x": 740,
+        "y": 260,
+        "w": 90,
+        "h": -40
+      },
+      "position": "740,260;830,220",
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "wire",
+      "head": {
+        "uuid": "5059d178e1fc4e7c",
+        "c_para": {
+          "netName": "3V3_NET",
+          "wire_width": "0.3",
+          "color": "16711680"
+        }
+      },
+      "shape": {
+        "x": 830,
+        "y": 220,
+        "w": 0,
+        "h": -20
+      },
+      "position": "830,220;830,200",
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "netlabel",
+      "head": {
+        "uuid": "4dcaac60e8cc4212",
+        "c_para": {
+          "netName": "3.3V"
+        }
+      },
+      "shape": {
+        "x": 850,
+        "y": 180,
+        "w": 24,
+        "h": 12
+      },
+      "position": "850,180",
+      "rotation": 0,
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "component",
+      "head": {
+        "uuid": "ffd051ce52cd4a50",
+        "c_para": {
+          "name": "U1",
+          "value": "ESP32 Dev Module\\nCP2102版"
+        },
+        "c_name": "ESP32 Dev Module",
+        "package": "",
+        "libId": "ESP32 Dev Module",
+        "manufacturer": "",
+        "datasheet": ""
+      },
+      "shape": {
+        "x": 1000,
+        "y": 600,
+        "w": 280,
+        "h": 300,
+        "pins": [
+          {
+            "x": -140,
+            "y": -120.0,
+            "length": 10,
+            "direction": "right",
+            "type": "end",
+            "color": 0,
+            "name": "GPIO15\nDHT22"
+          },
+          {
+            "x": -140,
+            "y": -84.0,
+            "length": 10,
+            "direction": "right",
+            "type": "end",
+            "color": 0,
+            "name": "GPIO13\nMENU"
+          },
+          {
+            "x": -140,
+            "y": -47.999999999999986,
+            "length": 10,
+            "direction": "right",
+            "type": "end",
+            "color": 0,
+            "name": "GPIO14\nPLUS"
+          },
+          {
+            "x": -140,
+            "y": -12.0,
+            "length": 10,
+            "direction": "right",
+            "type": "end",
+            "color": 0,
+            "name": "GPIO27\nMINUS"
+          },
+          {
+            "x": -140,
+            "y": 24.0,
+            "length": 10,
+            "direction": "right",
+            "type": "end",
+            "color": 0,
+            "name": "GPIO25\nBUZZER"
+          },
+          {
+            "x": -140,
+            "y": 60.0,
+            "length": 10,
+            "direction": "right",
+            "type": "end",
+            "color": 0,
+            "name": "GPIO0\nBOOT"
+          },
+          {
+            "x": -140,
+            "y": 95.99999999999997,
+            "length": 10,
+            "direction": "right",
+            "type": "end",
+            "color": 0,
+            "name": "GPIO2\nLED"
+          },
+          {
+            "x": -140,
+            "y": 132.0,
+            "length": 10,
+            "direction": "right",
+            "type": "end",
+            "color": 0,
+            "name": "EN\nRST"
+          },
+          {
+            "x": 140,
+            "y": -120.0,
+            "length": 10,
+            "direction": "left",
+            "type": "end",
+            "color": 0,
+            "name": "GPIO5\nTFT_CS"
+          },
+          {
+            "x": 140,
+            "y": -84.0,
+            "length": 10,
+            "direction": "left",
+            "type": "end",
+            "color": 0,
+            "name": "GPIO17\nTFT_DC"
+          },
+          {
+            "x": 140,
+            "y": -47.999999999999986,
+            "length": 10,
+            "direction": "left",
+            "type": "end",
+            "color": 0,
+            "name": "GPIO16\nTFT_RST"
+          },
+          {
+            "x": 140,
+            "y": -12.0,
+            "length": 10,
+            "direction": "left",
+            "type": "end",
+            "color": 0,
+            "name": "GPIO23\nTFT_MOSI"
+          },
+          {
+            "x": 140,
+            "y": 24.0,
+            "length": 10,
+            "direction": "left",
+            "type": "end",
+            "color": 0,
+            "name": "GPIO18\nTFT_SCK"
+          },
+          {
+            "x": 140,
+            "y": 60.0,
+            "length": 10,
+            "direction": "left",
+            "type": "end",
+            "color": 0,
+            "name": "GPIO4\nTFT_BL"
+          },
+          {
+            "x": 140,
+            "y": 105.0,
+            "length": 10,
+            "direction": "left",
+            "type": "power",
+            "color": 0,
+            "name": "3.3V"
+          },
+          {
+            "x": 140,
+            "y": 135.0,
+            "length": 10,
+            "direction": "left",
+            "type": "power",
+            "color": 0,
+            "name": "GND"
+          }
+        ],
+        "rectangles": [
+          {
+            "x": -140,
+            "y": -150,
+            "w": 280,
+            "h": 300,
+            "stroke_width": 2,
+            "color": 255,
+            "fill": 16775393,
+            "r": 5
+          }
+        ],
+        "circles": [],
+        "lines": [],
+        "texts": [
+          {
+            "type": "text",
+            "x": 0,
+            "y": -180,
+            "w": 0,
+            "h": 0,
+            "stroke_width": 0,
+            "color": 255,
+            "text": "U1",
+            "font_size": 12,
+            "text_anchor": "middle",
+            "text_orient": 0
+          },
+          {
+            "type": "text",
+            "x": 0,
+            "y": 180,
+            "w": 0,
+            "h": 0,
+            "stroke_width": 0,
+            "color": 255,
+            "text": "ESP32 Dev Module\\nCP2102版",
+            "font_size": 10,
+            "text_anchor": "middle",
+            "text_orient": 0
+          }
+        ]
+      },
+      "position": "1000,600",
+      "rotation": 0,
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "wire",
+      "head": {
+        "uuid": "62984a250e714e30",
+        "c_para": {
+          "netName": "3V3_NET",
+          "wire_width": "0.3",
+          "color": "16711680"
+        }
+      },
+      "shape": {
+        "x": 1140,
+        "y": 855,
+        "w": 140,
+        "h": -575
+      },
+      "position": "1140,855;1280,280",
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "wire",
+      "head": {
+        "uuid": "2588fd59e3ab4674",
+        "c_para": {
+          "netName": "GND_NET",
+          "wire_width": "0.3",
+          "color": "0"
+        }
+      },
+      "shape": {
+        "x": 1200,
+        "y": 885,
+        "w": 0,
+        "h": 55
+      },
+      "position": "1200,885;1200,940",
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "component",
+      "head": {
+        "uuid": "0793505e419f48d1",
+        "c_para": {
+          "name": "GND",
+          "value": ""
+        },
+        "c_name": "GND",
+        "libId": "GND",
+        "manufacturer": "",
+        "datasheet": ""
+      },
+      "shape": {
+        "x": 1200,
+        "y": 970,
+        "w": 0,
+        "h": 0,
+        "pins": [
+          {
+            "x": 0,
+            "y": 0,
+            "length": 0,
+            "direction": "up",
+            "type": "end",
+            "color": 0,
+            "name": "GND"
+          }
+        ],
+        "lines": [
+          {
+            "x1": -12,
+            "y1": 0,
+            "x2": 12,
+            "y2": 0,
+            "stroke_width": 2,
+            "color": 0
+          },
+          {
+            "x1": -8,
+            "y1": 6,
+            "x2": 8,
+            "y2": 6,
+            "stroke_width": 1.5,
+            "color": 0
+          },
+          {
+            "x1": -4,
+            "y1": 12,
+            "x2": 4,
+            "y2": 12,
+            "stroke_width": 1,
+            "color": 0
+          }
+        ],
+        "rectangles": [],
+        "circles": [],
+        "texts": [
+          {
+            "type": "text",
+            "x": 0,
+            "y": -30,
+            "w": 0,
+            "h": 0,
+            "stroke_width": 0,
+            "color": 0,
+            "text": "GND",
+            "font_size": 12,
+            "text_anchor": "middle",
+            "text_orient": 0
+          }
+        ]
+      },
+      "position": "1200,970",
+      "rotation": 0,
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "netlabel",
+      "head": {
+        "uuid": "3f5c2ac648094463",
+        "c_para": {
+          "netName": "3.3V"
+        }
+      },
+      "shape": {
+        "x": 1270,
+        "y": 280,
+        "w": 24,
+        "h": 12
+      },
+      "position": "1270,280",
+      "rotation": 0,
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "component",
+      "head": {
+        "uuid": "d0d7e676e624438f",
+        "c_para": {
+          "name": "J2",
+          "value": "TFT ST7789\\n240×320 SPI"
+        },
+        "c_name": "TFT ST7789",
+        "package": "Header-2.54-8P",
+        "libId": "",
+        "manufacturer": "",
+        "datasheet": ""
+      },
+      "shape": {
+        "x": 400,
+        "y": 1250,
+        "w": 200,
+        "h": 160,
+        "pins": [
+          {
+            "x": -60.0,
+            "y": -80,
+            "length": 10,
+            "direction": "down",
+            "type": "power",
+            "color": 0,
+            "name": "VCC\n3.3V"
+          },
+          {
+            "x": 0.0,
+            "y": -80,
+            "length": 10,
+            "direction": "down",
+            "type": "power",
+            "color": 0,
+            "name": "GND"
+          },
+          {
+            "x": 60.0,
+            "y": -80,
+            "length": 10,
+            "direction": "down",
+            "type": "end",
+            "color": 0,
+            "name": "BL\n背光"
+          },
+          {
+            "x": -100,
+            "y": 32.0,
+            "length": 10,
+            "direction": "right",
+            "type": "end",
+            "color": 0,
+            "name": "CS"
+          },
+          {
+            "x": -100,
+            "y": 56.0,
+            "length": 10,
+            "direction": "right",
+            "type": "end",
+            "color": 0,
+            "name": "DC"
+          },
+          {
+            "x": -60.0,
+            "y": 80,
+            "length": 10,
+            "direction": "up",
+            "type": "end",
+            "color": 0,
+            "name": "MOSI"
+          },
+          {
+            "x": 0.0,
+            "y": 80,
+            "length": 10,
+            "direction": "up",
+            "type": "end",
+            "color": 0,
+            "name": "SCK"
+          },
+          {
+            "x": 60.0,
+            "y": 80,
+            "length": 10,
+            "direction": "up",
+            "type": "end",
+            "color": 0,
+            "name": "RST"
+          }
+        ],
+        "rectangles": [
+          {
+            "x": -100,
+            "y": -80,
+            "w": 200,
+            "h": 160,
+            "stroke_width": 2,
+            "color": 8913151,
+            "fill": 16775393,
+            "r": 5
+          }
+        ],
+        "circles": [],
+        "lines": [],
+        "texts": [
+          {
+            "type": "text",
+            "x": 0,
+            "y": -110,
+            "w": 0,
+            "h": 0,
+            "stroke_width": 0,
+            "color": 8913151,
+            "text": "J2",
+            "font_size": 12,
+            "text_anchor": "middle",
+            "text_orient": 0
+          },
+          {
+            "type": "text",
+            "x": 0,
+            "y": 110,
+            "w": 0,
+            "h": 0,
+            "stroke_width": 0,
+            "color": 8913151,
+            "text": "TFT ST7789\\n240×320 SPI",
+            "font_size": 10,
+            "text_anchor": "middle",
+            "text_orient": 0
+          }
+        ]
+      },
+      "position": "400,1250",
+      "rotation": 0,
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "wire",
+      "head": {
+        "uuid": "a640bd85866d422d",
+        "c_para": {
+          "netName": "",
+          "wire_width": "0.3",
+          "color": "0"
+        }
+      },
+      "shape": {
+        "x": 450,
+        "y": 1220,
+        "w": 0,
+        "h": -120
+      },
+      "position": "450,1220;450,1100",
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "netlabel",
+      "head": {
+        "uuid": "16ec2229b43a4a7a",
+        "c_para": {
+          "netName": "3.3V"
+        }
+      },
+      "shape": {
+        "x": 450,
+        "y": 1080,
+        "w": 24,
+        "h": 12
+      },
+      "position": "450,1080",
+      "rotation": 0,
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "wire",
+      "head": {
+        "uuid": "c94ca2d9d1ab42f4",
+        "c_para": {
+          "netName": "",
+          "wire_width": "0.3",
+          "color": "0"
+        }
+      },
+      "shape": {
+        "x": 1140,
+        "y": 630,
+        "w": 140,
+        "h": 650
+      },
+      "position": "1140,630;1280,1280",
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "wire",
+      "head": {
+        "uuid": "8851695a9d6e4c46",
+        "c_para": {
+          "netName": "",
+          "wire_width": "0.3",
+          "color": "0"
+        }
+      },
+      "shape": {
+        "x": 1280,
+        "y": 1280,
+        "w": -680,
+        "h": 0
+      },
+      "position": "1280,1280;600,1280",
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "netlabel",
+      "head": {
+        "uuid": "e1c3fb81dedf4466",
+        "c_para": {
+          "netName": "TFT_CS"
+        }
+      },
+      "shape": {
+        "x": 1280,
+        "y": 1260,
+        "w": 36,
+        "h": 12
+      },
+      "position": "1280,1260",
+      "rotation": 0,
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "wire",
+      "head": {
+        "uuid": "1dd40d8e1ccd4383",
+        "c_para": {
+          "netName": "",
+          "wire_width": "0.3",
+          "color": "0"
+        }
+      },
+      "shape": {
+        "x": 1140,
+        "y": 666,
+        "w": 140,
+        "h": 634
+      },
+      "position": "1140,666;1280,1300",
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "wire",
+      "head": {
+        "uuid": "88940d2f70f84cd8",
+        "c_para": {
+          "netName": "",
+          "wire_width": "0.3",
+          "color": "0"
+        }
+      },
+      "shape": {
+        "x": 1280,
+        "y": 1300,
+        "w": -680,
+        "h": 0
+      },
+      "position": "1280,1300;600,1300",
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "netlabel",
+      "head": {
+        "uuid": "ed25cbd0747040ee",
+        "c_para": {
+          "netName": "TFT_DC"
+        }
+      },
+      "shape": {
+        "x": 1280,
+        "y": 1280,
+        "w": 36,
+        "h": 12
+      },
+      "position": "1280,1280",
+      "rotation": 0,
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "wire",
+      "head": {
+        "uuid": "5e7e0f03c2254689",
+        "c_para": {
+          "netName": "",
+          "wire_width": "0.3",
+          "color": "0"
+        }
+      },
+      "shape": {
+        "x": 1140,
+        "y": 702,
+        "w": 160,
+        "h": 628
+      },
+      "position": "1140,702;1300,1330",
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "netlabel",
+      "head": {
+        "uuid": "d3e79e38de6e4098",
+        "c_para": {
+          "netName": "TFT_RST"
+        }
+      },
+      "shape": {
+        "x": 1280,
+        "y": 1310,
+        "w": 42,
+        "h": 12
+      },
+      "position": "1280,1310",
+      "rotation": 0,
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "wire",
+      "head": {
+        "uuid": "d432c0d7a7a24f07",
+        "c_para": {
+          "netName": "",
+          "wire_width": "0.3",
+          "color": "0"
+        }
+      },
+      "shape": {
+        "x": 1140,
+        "y": 738,
+        "w": 140,
+        "h": 607
+      },
+      "position": "1140,738;1280,1345",
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "netlabel",
+      "head": {
+        "uuid": "d0cba11bdeec444e",
+        "c_para": {
+          "netName": "TFT_MOSI"
+        }
+      },
+      "shape": {
+        "x": 1100,
+        "y": 1325,
+        "w": 48,
+        "h": 12
+      },
+      "position": "1100,1325",
+      "rotation": 0,
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "wire",
+      "head": {
+        "uuid": "0499eaf02d6342c7",
+        "c_para": {
+          "netName": "",
+          "wire_width": "0.3",
+          "color": "0"
+        }
+      },
+      "shape": {
+        "x": 1140,
+        "y": 774,
+        "w": 180,
+        "h": 586
+      },
+      "position": "1140,774;1320,1360",
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "netlabel",
+      "head": {
+        "uuid": "f5bc709f58ff428a",
+        "c_para": {
+          "netName": "TFT_SCK"
+        }
+      },
+      "shape": {
+        "x": 1280,
+        "y": 1340,
+        "w": 42,
+        "h": 12
+      },
+      "position": "1280,1340",
+      "rotation": 0,
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "wire",
+      "head": {
+        "uuid": "ad2861220a6346bd",
+        "c_para": {
+          "netName": "",
+          "wire_width": "0.3",
+          "color": "0"
+        }
+      },
+      "shape": {
+        "x": 1140,
+        "y": 810,
+        "w": 140,
+        "h": 565
+      },
+      "position": "1140,810;1280,1375",
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "component",
+      "head": {
+        "uuid": "2f1b0511f47f44ee",
+        "c_para": {
+          "name": "R1",
+          "value": "4.7kΩ\n上拉电阻"
+        },
+        "c_name": "4.7kΩ\n上拉电阻",
+        "package": "0805",
+        "libId": "",
+        "manufacturer": "",
+        "datasheet": ""
+      },
+      "shape": {
+        "x": 800,
+        "y": 1600,
+        "w": 80,
+        "h": 40,
+        "pins": [
+          {
+            "x": -40,
+            "y": 0.0,
+            "length": 10,
+            "direction": "right",
+            "type": "end",
+            "color": 0,
+            "name": "1"
+          },
+          {
+            "x": 40,
+            "y": 0.0,
+            "length": 10,
+            "direction": "left",
+            "type": "end",
+            "color": 0,
+            "name": "2"
+          }
+        ],
+        "rectangles": [
+          {
+            "x": -40,
+            "y": -20,
+            "w": 80,
+            "h": 40,
+            "stroke_width": 2,
+            "color": 65280,
+            "fill": 16775393,
+            "r": 5
+          }
+        ],
+        "circles": [],
+        "lines": [],
+        "texts": [
+          {
+            "type": "text",
+            "x": 0,
+            "y": -50,
+            "w": 0,
+            "h": 0,
+            "stroke_width": 0,
+            "color": 65280,
+            "text": "R1",
+            "font_size": 12,
+            "text_anchor": "middle",
+            "text_orient": 0
+          },
+          {
+            "type": "text",
+            "x": 0,
+            "y": 50,
+            "w": 0,
+            "h": 0,
+            "stroke_width": 0,
+            "color": 65280,
+            "text": "4.7kΩ\n上拉电阻",
+            "font_size": 10,
+            "text_anchor": "middle",
+            "text_orient": 0
+          }
+        ]
+      },
+      "position": "800,1600",
+      "rotation": 0,
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "component",
+      "head": {
+        "uuid": "5b8058b51c4c484d",
+        "c_para": {
+          "name": "U3",
+          "value": "DHT22\\n温湿度传感器"
+        },
+        "c_name": "DHT22",
+        "package": "DHT22",
+        "libId": "",
+        "manufacturer": "",
+        "datasheet": ""
+      },
+      "shape": {
+        "x": 450,
+        "y": 1600,
+        "w": 160,
+        "h": 100,
+        "pins": [
+          {
+            "x": -32.0,
+            "y": -50,
+            "length": 10,
+            "direction": "down",
+            "type": "power",
+            "color": 0,
+            "name": "VCC\n3.3V"
+          },
+          {
+            "x": -80,
+            "y": 0.0,
+            "length": 10,
+            "direction": "right",
+            "type": "end",
+            "color": 0,
+            "name": "DATA"
+          },
+          {
+            "x": -32.0,
+            "y": 50,
+            "length": 10,
+            "direction": "up",
+            "type": "end",
+            "color": 0,
+            "name": "NC"
+          },
+          {
+            "x": 32.0,
+            "y": 50,
+            "length": 10,
+            "direction": "up",
+            "type": "power",
+            "color": 0,
+            "name": "GND"
+          }
+        ],
+        "rectangles": [
+          {
+            "x": -80,
+            "y": -50,
+            "w": 160,
+            "h": 100,
+            "stroke_width": 2,
+            "color": 65280,
+            "fill": 16775393,
+            "r": 5
+          }
+        ],
+        "circles": [],
+        "lines": [],
+        "texts": [
+          {
+            "type": "text",
+            "x": 0,
+            "y": -80,
+            "w": 0,
+            "h": 0,
+            "stroke_width": 0,
+            "color": 65280,
+            "text": "U3",
+            "font_size": 12,
+            "text_anchor": "middle",
+            "text_orient": 0
+          },
+          {
+            "type": "text",
+            "x": 0,
+            "y": 80,
+            "w": 0,
+            "h": 0,
+            "stroke_width": 0,
+            "color": 65280,
+            "text": "DHT22\\n温湿度传感器",
+            "font_size": 10,
+            "text_anchor": "middle",
+            "text_orient": 0
+          }
+        ]
+      },
+      "position": "450,1600",
+      "rotation": 0,
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "wire",
+      "head": {
+        "uuid": "8ceeae7102224d4d",
+        "c_para": {
+          "netName": "",
+          "wire_width": "0.3",
+          "color": "0"
+        }
+      },
+      "shape": {
+        "x": 450,
+        "y": 1550,
+        "w": 0,
+        "h": -70
+      },
+      "position": "450,1550;450,1480",
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "netlabel",
+      "head": {
+        "uuid": "d18e686c48d746b2",
+        "c_para": {
+          "netName": "3.3V"
+        }
+      },
+      "shape": {
+        "x": 450,
+        "y": 1460,
+        "w": 24,
+        "h": 12
+      },
+      "position": "450,1460",
+      "rotation": 0,
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "wire",
+      "head": {
+        "uuid": "2af718db1bb34da9",
+        "c_para": {
+          "netName": "",
+          "wire_width": "0.3",
+          "color": "0"
+        }
+      },
+      "shape": {
+        "x": 450,
+        "y": 1670,
+        "w": 0,
+        "h": 60
+      },
+      "position": "450,1670;450,1730",
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "component",
+      "head": {
+        "uuid": "fdc12a2a63064689",
+        "c_para": {
+          "name": "GND",
+          "value": ""
+        },
+        "c_name": "GND",
+        "libId": "GND",
+        "manufacturer": "",
+        "datasheet": ""
+      },
+      "shape": {
+        "x": 450,
+        "y": 1760,
+        "w": 0,
+        "h": 0,
+        "pins": [
+          {
+            "x": 0,
+            "y": 0,
+            "length": 0,
+            "direction": "up",
+            "type": "end",
+            "color": 0,
+            "name": "GND"
+          }
+        ],
+        "lines": [
+          {
+            "x1": -12,
+            "y1": 0,
+            "x2": 12,
+            "y2": 0,
+            "stroke_width": 2,
+            "color": 0
+          },
+          {
+            "x1": -8,
+            "y1": 6,
+            "x2": 8,
+            "y2": 6,
+            "stroke_width": 1.5,
+            "color": 0
+          },
+          {
+            "x1": -4,
+            "y1": 12,
+            "x2": 4,
+            "y2": 12,
+            "stroke_width": 1,
+            "color": 0
+          }
+        ],
+        "rectangles": [],
+        "circles": [],
+        "texts": [
+          {
+            "type": "text",
+            "x": 0,
+            "y": -30,
+            "w": 0,
+            "h": 0,
+            "stroke_width": 0,
+            "color": 0,
+            "text": "GND",
+            "font_size": 12,
+            "text_anchor": "middle",
+            "text_orient": 0
+          }
+        ]
+      },
+      "position": "450,1760",
+      "rotation": 0,
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "wire",
+      "head": {
+        "uuid": "b4c07b041cb645bc",
+        "c_para": {
+          "netName": "",
+          "wire_width": "0.3",
+          "color": "0"
+        }
+      },
+      "shape": {
+        "x": 530,
+        "y": 1600,
+        "w": 230,
+        "h": 0
+      },
+      "position": "530,1600;760,1600",
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "wire",
+      "head": {
+        "uuid": "62bfcb283f2a4126",
+        "c_para": {
+          "netName": "",
+          "wire_width": "0.3",
+          "color": "0"
+        }
+      },
+      "shape": {
+        "x": 760,
+        "y": 1600,
+        "w": 40,
+        "h": 0
+      },
+      "position": "760,1600;800,1600",
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "wire",
+      "head": {
+        "uuid": "47c67a886a95438c",
+        "c_para": {
+          "netName": "",
+          "wire_width": "0.3",
+          "color": "0"
+        }
+      },
+      "shape": {
+        "x": 800,
+        "y": 1600,
+        "w": 100,
+        "h": 0
+      },
+      "position": "800,1600;900,1600",
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "netlabel",
+      "head": {
+        "uuid": "6b1c74e919914c21",
+        "c_para": {
+          "netName": "DHT22_DATA"
+        }
+      },
+      "shape": {
+        "x": 700,
+        "y": 1580,
+        "w": 60,
+        "h": 12
+      },
+      "position": "700,1580",
+      "rotation": 0,
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "wire",
+      "head": {
+        "uuid": "9fb305652d98491f",
+        "c_para": {
+          "netName": "",
+          "wire_width": "0.3",
+          "color": "0"
+        }
+      },
+      "shape": {
+        "x": 800,
+        "y": 1580,
+        "w": 0,
+        "h": -100
+      },
+      "position": "800,1580;800,1480",
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "netlabel",
+      "head": {
+        "uuid": "2abf190289324085",
+        "c_para": {
+          "netName": "3.3V"
+        }
+      },
+      "shape": {
+        "x": 800,
+        "y": 1460,
+        "w": 24,
+        "h": 12
+      },
+      "position": "800,1460",
+      "rotation": 0,
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "component",
+      "head": {
+        "uuid": "199b3528b14b4067",
+        "c_para": {
+          "name": "SW1",
+          "value": "KEY_MENU\\n→GPIO13"
+        },
+        "c_name": "KEY_MENU",
+        "package": "SW-PB-6x6",
+        "libId": "",
+        "manufacturer": "",
+        "datasheet": ""
+      },
+      "shape": {
+        "x": 1600,
+        "y": 720,
+        "w": 80,
+        "h": 50,
+        "pins": [
+          {
+            "x": -16.0,
+            "y": -25,
+            "length": 10,
+            "direction": "down",
+            "type": "end",
+            "color": 0,
+            "name": "1"
+          },
+          {
+            "x": 16.0,
+            "y": -25,
+            "length": 10,
+            "direction": "down",
+            "type": "end",
+            "color": 0,
+            "name": "2"
+          },
+          {
+            "x": -16.0,
+            "y": 25,
+            "length": 10,
+            "direction": "up",
+            "type": "end",
+            "color": 0,
+            "name": "3"
+          },
+          {
+            "x": 16.0,
+            "y": 25,
+            "length": 10,
+            "direction": "up",
+            "type": "end",
+            "color": 0,
+            "name": "4"
+          }
+        ],
+        "rectangles": [
+          {
+            "x": -40,
+            "y": -25,
+            "w": 80,
+            "h": 50,
+            "stroke_width": 2,
+            "color": 16746496,
+            "fill": 16775393,
+            "r": 5
+          }
+        ],
+        "circles": [],
+        "lines": [],
+        "texts": [
+          {
+            "type": "text",
+            "x": 0,
+            "y": -55,
+            "w": 0,
+            "h": 0,
+            "stroke_width": 0,
+            "color": 16746496,
+            "text": "SW1",
+            "font_size": 12,
+            "text_anchor": "middle",
+            "text_orient": 0
+          },
+          {
+            "type": "text",
+            "x": 0,
+            "y": 55,
+            "w": 0,
+            "h": 0,
+            "stroke_width": 0,
+            "color": 16746496,
+            "text": "KEY_MENU\\n→GPIO13",
+            "font_size": 10,
+            "text_anchor": "middle",
+            "text_orient": 0
+          }
+        ]
+      },
+      "position": "1600,720",
+      "rotation": 0,
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "wire",
+      "head": {
+        "uuid": "48aefc72219049aa",
+        "c_para": {
+          "netName": "",
+          "wire_width": "0.3",
+          "color": "0"
+        }
+      },
+      "shape": {
+        "x": 1600,
+        "y": 745,
+        "w": 0,
+        "h": 55
+      },
+      "position": "1600,745;1600,800",
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "component",
+      "head": {
+        "uuid": "100d7892747b40f5",
+        "c_para": {
+          "name": "GND",
+          "value": ""
+        },
+        "c_name": "GND",
+        "libId": "GND",
+        "manufacturer": "",
+        "datasheet": ""
+      },
+      "shape": {
+        "x": 1600,
+        "y": 830,
+        "w": 0,
+        "h": 0,
+        "pins": [
+          {
+            "x": 0,
+            "y": 0,
+            "length": 0,
+            "direction": "up",
+            "type": "end",
+            "color": 0,
+            "name": "GND"
+          }
+        ],
+        "lines": [
+          {
+            "x1": -12,
+            "y1": 0,
+            "x2": 12,
+            "y2": 0,
+            "stroke_width": 2,
+            "color": 0
+          },
+          {
+            "x1": -8,
+            "y1": 6,
+            "x2": 8,
+            "y2": 6,
+            "stroke_width": 1.5,
+            "color": 0
+          },
+          {
+            "x1": -4,
+            "y1": 12,
+            "x2": 4,
+            "y2": 12,
+            "stroke_width": 1,
+            "color": 0
+          }
+        ],
+        "rectangles": [],
+        "circles": [],
+        "texts": [
+          {
+            "type": "text",
+            "x": 0,
+            "y": -30,
+            "w": 0,
+            "h": 0,
+            "stroke_width": 0,
+            "color": 0,
+            "text": "GND",
+            "font_size": 12,
+            "text_anchor": "middle",
+            "text_orient": 0
+          }
+        ]
+      },
+      "position": "1600,830",
+      "rotation": 0,
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "wire",
+      "head": {
+        "uuid": "a4d9b07789b84ffe",
+        "c_para": {
+          "netName": "",
+          "wire_width": "0.3",
+          "color": "0"
+        }
+      },
+      "shape": {
+        "x": 1560,
+        "y": 720,
+        "w": -420,
+        "h": -90
+      },
+      "position": "1560,720;1140,630",
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "netlabel",
+      "head": {
+        "uuid": "dec85da3282847cf",
+        "c_para": {
+          "netName": "KEY_MENU"
+        }
+      },
+      "shape": {
+        "x": 1550,
+        "y": 700,
+        "w": 48,
+        "h": 12
+      },
+      "position": "1550,700",
+      "rotation": 0,
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "component",
+      "head": {
+        "uuid": "67873ee2e42c443f",
+        "c_para": {
+          "name": "SW2",
+          "value": "KEY_PLUS\\n→GPIO14"
+        },
+        "c_name": "KEY_PLUS",
+        "package": "SW-PB-6x6",
+        "libId": "",
+        "manufacturer": "",
+        "datasheet": ""
+      },
+      "shape": {
+        "x": 1600,
+        "y": 780,
+        "w": 80,
+        "h": 50,
+        "pins": [
+          {
+            "x": -16.0,
+            "y": -25,
+            "length": 10,
+            "direction": "down",
+            "type": "end",
+            "color": 0,
+            "name": "1"
+          },
+          {
+            "x": 16.0,
+            "y": -25,
+            "length": 10,
+            "direction": "down",
+            "type": "end",
+            "color": 0,
+            "name": "2"
+          },
+          {
+            "x": -16.0,
+            "y": 25,
+            "length": 10,
+            "direction": "up",
+            "type": "end",
+            "color": 0,
+            "name": "3"
+          },
+          {
+            "x": 16.0,
+            "y": 25,
+            "length": 10,
+            "direction": "up",
+            "type": "end",
+            "color": 0,
+            "name": "4"
+          }
+        ],
+        "rectangles": [
+          {
+            "x": -40,
+            "y": -25,
+            "w": 80,
+            "h": 50,
+            "stroke_width": 2,
+            "color": 16746496,
+            "fill": 16775393,
+            "r": 5
+          }
+        ],
+        "circles": [],
+        "lines": [],
+        "texts": [
+          {
+            "type": "text",
+            "x": 0,
+            "y": -55,
+            "w": 0,
+            "h": 0,
+            "stroke_width": 0,
+            "color": 16746496,
+            "text": "SW2",
+            "font_size": 12,
+            "text_anchor": "middle",
+            "text_orient": 0
+          },
+          {
+            "type": "text",
+            "x": 0,
+            "y": 55,
+            "w": 0,
+            "h": 0,
+            "stroke_width": 0,
+            "color": 16746496,
+            "text": "KEY_PLUS\\n→GPIO14",
+            "font_size": 10,
+            "text_anchor": "middle",
+            "text_orient": 0
+          }
+        ]
+      },
+      "position": "1600,780",
+      "rotation": 0,
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "wire",
+      "head": {
+        "uuid": "b1fe950be0bd4a2a",
+        "c_para": {
+          "netName": "",
+          "wire_width": "0.3",
+          "color": "0"
+        }
+      },
+      "shape": {
+        "x": 1600,
+        "y": 805,
+        "w": 0,
+        "h": 55
+      },
+      "position": "1600,805;1600,860",
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "component",
+      "head": {
+        "uuid": "4b33996e36d74f29",
+        "c_para": {
+          "name": "GND",
+          "value": ""
+        },
+        "c_name": "GND",
+        "libId": "GND",
+        "manufacturer": "",
+        "datasheet": ""
+      },
+      "shape": {
+        "x": 1600,
+        "y": 890,
+        "w": 0,
+        "h": 0,
+        "pins": [
+          {
+            "x": 0,
+            "y": 0,
+            "length": 0,
+            "direction": "up",
+            "type": "end",
+            "color": 0,
+            "name": "GND"
+          }
+        ],
+        "lines": [
+          {
+            "x1": -12,
+            "y1": 0,
+            "x2": 12,
+            "y2": 0,
+            "stroke_width": 2,
+            "color": 0
+          },
+          {
+            "x1": -8,
+            "y1": 6,
+            "x2": 8,
+            "y2": 6,
+            "stroke_width": 1.5,
+            "color": 0
+          },
+          {
+            "x1": -4,
+            "y1": 12,
+            "x2": 4,
+            "y2": 12,
+            "stroke_width": 1,
+            "color": 0
+          }
+        ],
+        "rectangles": [],
+        "circles": [],
+        "texts": [
+          {
+            "type": "text",
+            "x": 0,
+            "y": -30,
+            "w": 0,
+            "h": 0,
+            "stroke_width": 0,
+            "color": 0,
+            "text": "GND",
+            "font_size": 12,
+            "text_anchor": "middle",
+            "text_orient": 0
+          }
+        ]
+      },
+      "position": "1600,890",
+      "rotation": 0,
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "wire",
+      "head": {
+        "uuid": "fb25dab5f9c849b2",
+        "c_para": {
+          "netName": "",
+          "wire_width": "0.3",
+          "color": "0"
+        }
+      },
+      "shape": {
+        "x": 1560,
+        "y": 780,
+        "w": -420,
+        "h": -120
+      },
+      "position": "1560,780;1140,660",
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "netlabel",
+      "head": {
+        "uuid": "0ce74de59382454a",
+        "c_para": {
+          "netName": "KEY_PLUS"
+        }
+      },
+      "shape": {
+        "x": 1550,
+        "y": 760,
+        "w": 48,
+        "h": 12
+      },
+      "position": "1550,760",
+      "rotation": 0,
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "component",
+      "head": {
+        "uuid": "7298591382524e5d",
+        "c_para": {
+          "name": "SW3",
+          "value": "KEY_MINUS\\n→GPIO27"
+        },
+        "c_name": "KEY_MINUS",
+        "package": "SW-PB-6x6",
+        "libId": "",
+        "manufacturer": "",
+        "datasheet": ""
+      },
+      "shape": {
+        "x": 1600,
+        "y": 840,
+        "w": 80,
+        "h": 50,
+        "pins": [
+          {
+            "x": -16.0,
+            "y": -25,
+            "length": 10,
+            "direction": "down",
+            "type": "end",
+            "color": 0,
+            "name": "1"
+          },
+          {
+            "x": 16.0,
+            "y": -25,
+            "length": 10,
+            "direction": "down",
+            "type": "end",
+            "color": 0,
+            "name": "2"
+          },
+          {
+            "x": -16.0,
+            "y": 25,
+            "length": 10,
+            "direction": "up",
+            "type": "end",
+            "color": 0,
+            "name": "3"
+          },
+          {
+            "x": 16.0,
+            "y": 25,
+            "length": 10,
+            "direction": "up",
+            "type": "end",
+            "color": 0,
+            "name": "4"
+          }
+        ],
+        "rectangles": [
+          {
+            "x": -40,
+            "y": -25,
+            "w": 80,
+            "h": 50,
+            "stroke_width": 2,
+            "color": 16746496,
+            "fill": 16775393,
+            "r": 5
+          }
+        ],
+        "circles": [],
+        "lines": [],
+        "texts": [
+          {
+            "type": "text",
+            "x": 0,
+            "y": -55,
+            "w": 0,
+            "h": 0,
+            "stroke_width": 0,
+            "color": 16746496,
+            "text": "SW3",
+            "font_size": 12,
+            "text_anchor": "middle",
+            "text_orient": 0
+          },
+          {
+            "type": "text",
+            "x": 0,
+            "y": 55,
+            "w": 0,
+            "h": 0,
+            "stroke_width": 0,
+            "color": 16746496,
+            "text": "KEY_MINUS\\n→GPIO27",
+            "font_size": 10,
+            "text_anchor": "middle",
+            "text_orient": 0
+          }
+        ]
+      },
+      "position": "1600,840",
+      "rotation": 0,
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "wire",
+      "head": {
+        "uuid": "b73f1aa3c6f644a5",
+        "c_para": {
+          "netName": "",
+          "wire_width": "0.3",
+          "color": "0"
+        }
+      },
+      "shape": {
+        "x": 1600,
+        "y": 865,
+        "w": 0,
+        "h": 55
+      },
+      "position": "1600,865;1600,920",
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "component",
+      "head": {
+        "uuid": "532994b19b304183",
+        "c_para": {
+          "name": "GND",
+          "value": ""
+        },
+        "c_name": "GND",
+        "libId": "GND",
+        "manufacturer": "",
+        "datasheet": ""
+      },
+      "shape": {
+        "x": 1600,
+        "y": 950,
+        "w": 0,
+        "h": 0,
+        "pins": [
+          {
+            "x": 0,
+            "y": 0,
+            "length": 0,
+            "direction": "up",
+            "type": "end",
+            "color": 0,
+            "name": "GND"
+          }
+        ],
+        "lines": [
+          {
+            "x1": -12,
+            "y1": 0,
+            "x2": 12,
+            "y2": 0,
+            "stroke_width": 2,
+            "color": 0
+          },
+          {
+            "x1": -8,
+            "y1": 6,
+            "x2": 8,
+            "y2": 6,
+            "stroke_width": 1.5,
+            "color": 0
+          },
+          {
+            "x1": -4,
+            "y1": 12,
+            "x2": 4,
+            "y2": 12,
+            "stroke_width": 1,
+            "color": 0
+          }
+        ],
+        "rectangles": [],
+        "circles": [],
+        "texts": [
+          {
+            "type": "text",
+            "x": 0,
+            "y": -30,
+            "w": 0,
+            "h": 0,
+            "stroke_width": 0,
+            "color": 0,
+            "text": "GND",
+            "font_size": 12,
+            "text_anchor": "middle",
+            "text_orient": 0
+          }
+        ]
+      },
+      "position": "1600,950",
+      "rotation": 0,
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "wire",
+      "head": {
+        "uuid": "6e7bf73cec2f48d0",
+        "c_para": {
+          "netName": "",
+          "wire_width": "0.3",
+          "color": "0"
+        }
+      },
+      "shape": {
+        "x": 1560,
+        "y": 840,
+        "w": -420,
+        "h": -150
+      },
+      "position": "1560,840;1140,690",
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "netlabel",
+      "head": {
+        "uuid": "94a3775c33cc484f",
+        "c_para": {
+          "netName": "KEY_MINUS"
+        }
+      },
+      "shape": {
+        "x": 1550,
+        "y": 820,
+        "w": 54,
+        "h": 12
+      },
+      "position": "1550,820",
+      "rotation": 0,
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "component",
+      "head": {
+        "uuid": "9fedb8971675497a",
+        "c_para": {
+          "name": "LS1",
+          "value": "蜂鸣器\\n有源5V"
+        },
+        "c_name": "蜂鸣器",
+        "package": "BUZZER-TH",
+        "libId": "",
+        "manufacturer": "",
+        "datasheet": ""
+      },
+      "shape": {
+        "x": 1600,
+        "y": 1300,
+        "w": 120,
+        "h": 80,
+        "pins": [
+          {
+            "x": -24.0,
+            "y": -40,
+            "length": 10,
+            "direction": "down",
+            "type": "end",
+            "color": 0,
+            "name": "+"
+          },
+          {
+            "x": 24.0,
+            "y": -40,
+            "length": 10,
+            "direction": "down",
+            "type": "end",
+            "color": 0,
+            "name": "-"
+          }
+        ],
+        "rectangles": [
+          {
+            "x": -60,
+            "y": -40,
+            "w": 120,
+            "h": 80,
+            "stroke_width": 2,
+            "color": 8913151,
+            "fill": 16775393,
+            "r": 5
+          }
+        ],
+        "circles": [],
+        "lines": [],
+        "texts": [
+          {
+            "type": "text",
+            "x": 0,
+            "y": -70,
+            "w": 0,
+            "h": 0,
+            "stroke_width": 0,
+            "color": 8913151,
+            "text": "LS1",
+            "font_size": 12,
+            "text_anchor": "middle",
+            "text_orient": 0
+          },
+          {
+            "type": "text",
+            "x": 0,
+            "y": 70,
+            "w": 0,
+            "h": 0,
+            "stroke_width": 0,
+            "color": 8913151,
+            "text": "蜂鸣器\\n有源5V",
+            "font_size": 10,
+            "text_anchor": "middle",
+            "text_orient": 0
+          }
+        ]
+      },
+      "position": "1600,1300",
+      "rotation": 0,
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "component",
+      "head": {
+        "uuid": "b6d4805fbaa04593",
+        "c_para": {
+          "name": "R2",
+          "value": "100Ω\n限流"
+        },
+        "c_name": "100Ω\n限流",
+        "package": "0805",
+        "libId": "Resistor",
+        "manufacturer": "",
+        "datasheet": ""
+      },
+      "shape": {
+        "x": 1600,
+        "y": 1250,
+        "w": 60,
+        "h": 30,
+        "pins": [
+          {
+            "x": -30,
+            "y": 0.0,
+            "length": 10,
+            "direction": "right",
+            "type": "end",
+            "color": 0,
+            "name": "1"
+          },
+          {
+            "x": 30,
+            "y": 0.0,
+            "length": 10,
+            "direction": "left",
+            "type": "end",
+            "color": 0,
+            "name": "2"
+          }
+        ],
+        "rectangles": [
+          {
+            "x": -30,
+            "y": -15,
+            "w": 60,
+            "h": 30,
+            "stroke_width": 2,
+            "color": 65280,
+            "fill": 16775393,
+            "r": 5
+          }
+        ],
+        "circles": [],
+        "lines": [],
+        "texts": [
+          {
+            "type": "text",
+            "x": 0,
+            "y": -45,
+            "w": 0,
+            "h": 0,
+            "stroke_width": 0,
+            "color": 65280,
+            "text": "R2",
+            "font_size": 12,
+            "text_anchor": "middle",
+            "text_orient": 0
+          },
+          {
+            "type": "text",
+            "x": 0,
+            "y": 45,
+            "w": 0,
+            "h": 0,
+            "stroke_width": 0,
+            "color": 65280,
+            "text": "100Ω\n限流",
+            "font_size": 10,
+            "text_anchor": "middle",
+            "text_orient": 0
+          }
+        ]
+      },
+      "position": "1600,1250",
+      "rotation": 0,
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "wire",
+      "head": {
+        "uuid": "eadf762141714c35",
+        "c_para": {
+          "netName": "",
+          "wire_width": "0.3",
+          "color": "0"
+        }
+      },
+      "shape": {
+        "x": 1140,
+        "y": 774,
+        "w": 410,
+        "h": 476
+      },
+      "position": "1140,774;1550,1250",
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "netlabel",
+      "head": {
+        "uuid": "1fe801cf3adf4050",
+        "c_para": {
+          "netName": "BUZZER_PWM"
+        }
+      },
+      "shape": {
+        "x": 1550,
+        "y": 1230,
+        "w": 60,
+        "h": 12
+      },
+      "position": "1550,1230",
+      "rotation": 0,
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "wire",
+      "head": {
+        "uuid": "fac66a698a5c4809",
+        "c_para": {
+          "netName": "",
+          "wire_width": "0.3",
+          "color": "0"
+        }
+      },
+      "shape": {
+        "x": 1570,
+        "y": 1250,
+        "w": 6,
+        "h": 30
+      },
+      "position": "1570,1250;1576,1280",
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "wire",
+      "head": {
+        "uuid": "0bb0426e65c84f09",
+        "c_para": {
+          "netName": "",
+          "wire_width": "0.3",
+          "color": "0"
+        }
+      },
+      "shape": {
+        "x": 1624,
+        "y": 1280,
+        "w": 26,
+        "h": -30
+      },
+      "position": "1624,1280;1650,1250",
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "wire",
+      "head": {
+        "uuid": "62f54eaccd60487a",
+        "c_para": {
+          "netName": "",
+          "wire_width": "0.3",
+          "color": "0"
+        }
+      },
+      "shape": {
+        "x": 1650,
+        "y": 1250,
+        "w": 150,
+        "h": 0
+      },
+      "position": "1650,1250;1800,1250",
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "netlabel",
+      "head": {
+        "uuid": "f5dc31cf15cc413e",
+        "c_para": {
+          "netName": "3.3V"
+        }
+      },
+      "shape": {
+        "x": 1820,
+        "y": 1250,
+        "w": 24,
+        "h": 12
+      },
+      "position": "1820,1250",
+      "rotation": 0,
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "text",
+      "head": {
+        "uuid": "32ed730862984afe",
+        "c_para": {
+          "text": "04-clock — ESP32 桌面时钟摆件",
+          "font_size": "18",
+          "color": "255"
+        }
+      },
+      "shape": {
+        "x": 1400,
+        "y": 50,
+        "w": 248.39999999999998,
+        "h": 21.599999999999998
+      },
+      "position": "1400,50",
+      "rotation": 0,
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "text",
+      "head": {
+        "uuid": "18ee4a86b14f4273",
+        "c_para": {
+          "text": "原理图 v1.0 | 2026-07-02 | 立创EDA 可导入",
+          "font_size": "12",
+          "color": "8947848"
+        }
+      },
+      "shape": {
+        "x": 1400,
+        "y": 80,
+        "w": 237.6,
+        "h": 14.399999999999999
+      },
+      "position": "1400,80",
+      "rotation": 0,
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "text",
+      "head": {
+        "uuid": "d6e7679a5c8f4abb",
+        "c_para": {
+          "text": "═══ 电源系统 ═══",
+          "font_size": "12",
+          "color": "16711680"
+        }
+      },
+      "shape": {
+        "x": 400,
+        "y": 140,
+        "w": 86.39999999999999,
+        "h": 14.399999999999999
+      },
+      "position": "400,140",
+      "rotation": 0,
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "text",
+      "head": {
+        "uuid": "afc4fa332f3f4457",
+        "c_para": {
+          "text": "═══ ESP32 主控 ═══",
+          "font_size": "12",
+          "color": "255"
+        }
+      },
+      "shape": {
+        "x": 1000,
+        "y": 570,
+        "w": 115.19999999999999,
+        "h": 14.399999999999999
+      },
+      "position": "1000,570",
+      "rotation": 0,
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "text",
+      "head": {
+        "uuid": "b45c0f272a8a48b4",
+        "c_para": {
+          "text": "═══ TFT 屏幕 ═══",
+          "font_size": "12",
+          "color": "8913151"
+        }
+      },
+      "shape": {
+        "x": 500,
+        "y": 1230,
+        "w": 100.8,
+        "h": 14.399999999999999
+      },
+      "position": "500,1230",
+      "rotation": 0,
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "text",
+      "head": {
+        "uuid": "eb75e4aac2d14467",
+        "c_para": {
+          "text": "═══ DHT22 ═══",
+          "font_size": "12",
+          "color": "65280"
+        }
+      },
+      "shape": {
+        "x": 550,
+        "y": 1560,
+        "w": 93.6,
+        "h": 14.399999999999999
+      },
+      "position": "550,1560",
+      "rotation": 0,
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "text",
+      "head": {
+        "uuid": "4939af778f46483b",
+        "c_para": {
+          "text": "═══ 按键模块 ═══",
+          "font_size": "12",
+          "color": "16746496"
+        }
+      },
+      "shape": {
+        "x": 1600,
+        "y": 660,
+        "w": 86.39999999999999,
+        "h": 14.399999999999999
+      },
+      "position": "1600,660",
+      "rotation": 0,
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "text",
+      "head": {
+        "uuid": "4c4fc941418f4242",
+        "c_para": {
+          "text": "═══ 蜂鸣器 ═══",
+          "font_size": "12",
+          "color": "8913151"
+        }
+      },
+      "shape": {
+        "x": 1600,
+        "y": 1250,
+        "w": 79.2,
+        "h": 14.399999999999999
+      },
+      "position": "1600,1250",
+      "rotation": 0,
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "text",
+      "head": {
+        "uuid": "81dd5fcf65c14295",
+        "c_para": {
+          "text": "注: 按键使用 ESP32 内部 INPUT_PULLUP, 可不接外部上拉电阻",
+          "font_size": "10",
+          "color": "8947848"
+        }
+      },
+      "shape": {
+        "x": 200,
+        "y": 1000,
+        "w": 240.0,
+        "h": 12.0
+      },
+      "position": "200,1000",
+      "rotation": 0,
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "text",
+      "head": {
+        "uuid": "5e76a9cf2f834769",
+        "c_para": {
+          "text": "注: DHT22 DATA 引脚需 4.7kΩ 上拉到 3.3V",
+          "font_size": "10",
+          "color": "8947848"
+        }
+      },
+      "shape": {
+        "x": 200,
+        "y": 1020,
+        "w": 192.0,
+        "h": 12.0
+      },
+      "position": "200,1020",
+      "rotation": 0,
+      "show": true,
+      "locked": false
+    },
+    {
+      "type": "text",
+      "head": {
+        "uuid": "e7558e2ac4b14d62",
+        "c_para": {
+          "text": "注: 蜂鸣器需串联 100Ω 限流电阻, 或用 NPN 三极管驱动",
+          "font_size": "10",
+          "color": "8947848"
+        }
+      },
+      "shape": {
+        "x": 200,
+        "y": 1040,
+        "w": 198.0,
+        "h": 12.0
+      },
+      "position": "200,1040",
+      "rotation": 0,
+      "show": true,
+      "locked": false
+    }
+  ],
+  "nets": [
+    {
+      "name": "3V3_NET",
+      "pins": [
+        {
+          "cid": "J1",
+          "p": "VBUS"
+        },
+        {
+          "cid": "U2",
+          "p": "Vin"
+        }
+      ]
+    },
+    {
+      "name": "3V3_NET",
+      "pins": [
+        {
+          "cid": "U2",
+          "p": "Vout"
+        },
+        {
+          "cid": "U1",
+          "p": "3.3V"
+        }
+      ]
+    },
+    {
+      "name": "3V3_NET",
+      "pins": [
+        {
+          "cid": "U2",
+          "p": "Vout"
+        },
+        {
+          "cid": "J2",
+          "p": "VCC"
+        }
+      ]
+    },
+    {
+      "name": "3V3_NET",
+      "pins": [
+        {
+          "cid": "U2",
+          "p": "Vout"
+        },
+        {
+          "cid": "U3",
+          "p": "VCC"
+        }
+      ]
+    },
+    {
+      "name": "3V3_NET",
+      "pins": [
+        {
+          "cid": "U2",
+          "p": "Vout"
+        },
+        {
+          "cid": "R1",
+          "p": "2"
+        }
+      ]
+    },
+    {
+      "name": "3V3_NET",
+      "pins": [
+        {
+          "cid": "U2",
+          "p": "Vout"
+        },
+        {
+          "cid": "LS1",
+          "p": "+"
+        }
+      ]
+    },
+    {
+      "name": "GND_NET",
+      "pins": [
+        {
+          "cid": "J1",
+          "p": "GND"
+        },
+        {
+          "cid": "U1",
+          "p": "GND"
+        }
+      ]
+    },
+    {
+      "name": "GND_NET",
+      "pins": [
+        {
+          "cid": "U2",
+          "p": "GND"
+        },
+        {
+          "cid": "GND",
+          "p": ""
+        }
+      ]
+    },
+    {
+      "name": "GND_NET",
+      "pins": [
+        {
+          "cid": "U3",
+          "p": "GND"
+        },
+        {
+          "cid": "GND",
+          "p": ""
+        }
+      ]
+    },
+    {
+      "name": "DHT22_DATA",
+      "pins": [
+        {
+          "cid": "U3",
+          "p": "DATA"
+        },
+        {
+          "cid": "U1",
+          "p": "GPIO15"
+        }
+      ]
+    },
+    {
+      "name": "DHT22_DATA",
+      "pins": [
+        {
+          "cid": "U3",
+          "p": "DATA"
+        },
+        {
+          "cid": "R1",
+          "p": "1"
+        }
+      ]
+    },
+    {
+      "name": "TFT_CS",
+      "pins": [
+        {
+          "cid": "U1",
+          "p": "GPIO5"
+        },
+        {
+          "cid": "J2",
+          "p": "CS"
+        }
+      ]
+    },
+    {
+      "name": "TFT_DC",
+      "pins": [
+        {
+          "cid": "U1",
+          "p": "GPIO17"
+        },
+        {
+          "cid": "J2",
+          "p": "DC"
+        }
+      ]
+    },
+    {
+      "name": "TFT_RST",
+      "pins": [
+        {
+          "cid": "U1",
+          "p": "GPIO16"
+        },
+        {
+          "cid": "J2",
+          "p": "RST"
+        }
+      ]
+    },
+    {
+      "name": "TFT_MOSI",
+      "pins": [
+        {
+          "cid": "U1",
+          "p": "GPIO23"
+        },
+        {
+          "cid": "J2",
+          "p": "MOSI"
+        }
+      ]
+    },
+    {
+      "name": "TFT_SCK",
+      "pins": [
+        {
+          "cid": "U1",
+          "p": "GPIO18"
+        },
+        {
+          "cid": "J2",
+          "p": "SCK"
+        }
+      ]
+    },
+    {
+      "name": "TFT_BL",
+      "pins": [
+        {
+          "cid": "U1",
+          "p": "GPIO4"
+        },
+        {
+          "cid": "J2",
+          "p": "BL"
+        }
+      ]
+    },
+    {
+      "name": "KEY_MENU",
+      "pins": [
+        {
+          "cid": "U1",
+          "p": "GPIO13"
+        },
+        {
+          "cid": "SW1",
+          "p": "1"
+        }
+      ]
+    },
+    {
+      "name": "KEY_PLUS",
+      "pins": [
+        {
+          "cid": "U1",
+          "p": "GPIO14"
+        },
+        {
+          "cid": "SW2",
+          "p": "1"
+        }
+      ]
+    },
+    {
+      "name": "KEY_MINUS",
+      "pins": [
+        {
+          "cid": "U1",
+          "p": "GPIO27"
+        },
+        {
+          "cid": "SW3",
+          "p": "1"
+        }
+      ]
+    },
+    {
+      "name": "BUZZER_PWM",
+      "pins": [
+        {
+          "cid": "U1",
+          "p": "GPIO25"
+        },
+        {
+          "cid": "LS1",
+          "p": "+"
+        }
+      ]
+    }
+  ]
+}
